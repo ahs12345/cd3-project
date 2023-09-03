@@ -30,7 +30,7 @@
     "build": "grunt build",
     "test": "grunt build",
     "watch": "grunt server",
-    "serve": "grunt serve",
+    "serve": "./node_modules/.bin/grunt serve",
     "run" : "grunt run"
   },
   "licenses": [
