@@ -68,17 +68,25 @@ module.exports = function(grunt) {
 
     // Local server:
     connect: {
-      options: {
-        port: 9000,
-        livereload: 35729,
-        // change this to '0.0.0.0' to access the server from outside
-        hostname: 'localhost'
-      },
-      livereload: {
         options: {
-          open: true,
-          base: ['<%= config.dist %>']
-        }
+          port: 9000,
+          livereload: false,
+          // change this to '0.0.0.0' to access the server from outside
+          hostname: '0.0.0.0'
+        },
+        livereload: {
+          options: {
+            open: true,
+            base: ['<%= config.dist %>']
+          }
+        },
+        server: {
+          options: {
+              port: 9000,
+              hostname: '0.0.0.0', // This allows the server to be accessed externally
+              keepalive: true,
+              base: ['<%= config.dist %>']
+          }
       }
     },
 
@@ -497,11 +505,8 @@ module.exports = function(grunt) {
     'htmlhint'
   ]);
 
-  grunt.registerTask('ci', 
-  ['assemble', 
-  'concat:dist', 
-  'postcss', 
-  'newer:imagemin']);
+  grunt.registerTask('serve', ['connect:server']);
+
 
 
   // runs with just grunt command

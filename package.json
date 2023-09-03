@@ -30,7 +30,8 @@
     "build": "grunt build",
     "test": "grunt build",
     "watch": "grunt server",
-    "ci": "grunt ci"
+    "serve": "grunt serve",
+    "run" : "grunt run"
   },
   "licenses": [
     {
