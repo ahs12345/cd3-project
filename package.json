@@ -29,7 +29,8 @@
     "assemble": "grunt assemble",
     "build": "grunt build",
     "test": "grunt build",
-    "watch": "grunt server"
+    "watch": "grunt server",
+    "ci": "grunt ci"
   },
   "licenses": [
     {

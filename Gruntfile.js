@@ -497,6 +497,13 @@ module.exports = function(grunt) {
     'htmlhint'
   ]);
 
+  grunt.registerTask('ci', 
+  ['assemble', 
+  'concat:dist', 
+  'postcss', 
+  'newer:imagemin']);
+
+
   // runs with just grunt command
   grunt.registerTask('default', ['build']);
 };
