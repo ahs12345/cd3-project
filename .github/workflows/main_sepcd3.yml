@@ -21,17 +21,20 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: npm install, build, and test
+      - name: Install dependencies and Grunt CLI
         run: |
           npm install
-          npm run build --if-present
-          npm run test --if-present
+          npm install -g grunt-cli
 
+      - name: Build the project with Grunt
+        run: grunt build
+
+      # Assuming the build outputs to a 'dist' directory. Modify if different.
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -50,6 +53,11 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
+          app-name: 'SEPcd3'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5B962C2EE9694DBB9DBE4383847A9F9C }}
+          package: .
+
           app-name: 'SEPcd3'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5B962C2EE9694DBB9DBE4383847A9F9C }}
