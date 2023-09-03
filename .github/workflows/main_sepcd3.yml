@@ -35,7 +35,10 @@ jobs:
         with:
           name: node-app
           path: ./
-          exclude: src/**/*
+          exclude: |
+            .git/**/*
+            src/**/*
+
 
   deploy:
     runs-on: ubuntu-latest
