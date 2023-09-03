@@ -57,8 +57,3 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5B962C2EE9694DBB9DBE4383847A9F9C }}
           package: .
-
-          app-name: 'SEPcd3'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5B962C2EE9694DBB9DBE4383847A9F9C }}
-          package: .
