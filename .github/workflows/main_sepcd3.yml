@@ -38,6 +38,7 @@ jobs:
             dist/**
             package.json
             Gruntfile.js
+            node_modules/**
 
 
   deploy:
