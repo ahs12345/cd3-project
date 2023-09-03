@@ -31,13 +31,13 @@ jobs:
 
       # Assuming the build outputs to a 'dist' directory. Modify if different.
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: ./
-          exclude: |
-            .git/**/*
-            src/**/*
+          path: |
+            dist/**
+            package.json
+            Gruntfile.js
 
 
   deploy:
