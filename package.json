@@ -90,6 +90,7 @@
     "yaml": "^2.2.2"
   },
   "dependencies": {
+    "grunt": "1.6.1"
     "grunt-cli": "^1.4.3",
     "upath": "^1.2.0"
   }
