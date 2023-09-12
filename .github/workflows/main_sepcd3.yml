@@ -3,7 +3,7 @@ name: CI/CD Pipeline with Vercel
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main  
 
 jobs:
   build:
@@ -16,8 +16,8 @@ jobs:
     - name: Install dependencies
       run: npm install
     
-    #- name: Run tests (if any)
-    # run: npm test
+    - name: Run tests 
+      run: npm test
 
     - name: Deploy to Vercel
       run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --confirm
