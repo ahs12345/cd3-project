@@ -18,17 +18,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run Snyk to check for vulnerabilities
-      uses: snyk/actions/php@master
-      continue-on-error: true # To make sure that SARIF upload gets called
+      uses: snyk/actions/node@master
       env:
         SNYK_TOKEN: 7c3afaa8-94a9-4af9-b603-82ec87fd3ae3
-      with:
-        args: --sarif-file-output=snyk.sarif
-          
-    - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: snyk.sarif
 
     - name: Install dependencies
       run: npm install
