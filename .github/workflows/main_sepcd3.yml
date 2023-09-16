@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-pages-artifact@v2
 
   deploy:
-
+    steps:
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/node@master
       env:
