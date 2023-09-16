@@ -24,7 +24,7 @@ jobs:
       run: npm test
 
     - name: Fix permissions
-      run: |
+      run:
       chmod -c -R +rX "_site/" | while read line; do
         echo "::warning title=Invalid file permissions automatically fixed::$line"
       done
@@ -37,7 +37,7 @@ jobs:
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/node@master
       env:
-        SNYK_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
     - name: Deploy to Vercel
       run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --confirm
