@@ -4,7 +4,7 @@ on:
     branches: [ main ]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -12,12 +12,37 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: "18.x"
+        
     - name: Install node modules
       run: npm ci
+      
     - name: Build
       run: npm run build
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.0.0
-      with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: dist/ # The folder the action should deploy.
+      
+    - name: Fix permissions
+      run: |
+        chmod -c -R +rX "_site/" | while read line; do
+          echo "::warning title=Invalid file permissions automatically fixed::$line"
+        done
+    
+    - name: Upload page artifacts
+      uses: actions/upload-pages-artifact@v2
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+  
+    
