@@ -23,10 +23,21 @@ jobs:
     - name: Run tests 
       run: npm test
 
+    - name: Fix permissions
+      run: |
+      chmod -c -R +rX "_site/" | while read line; do
+        echo "::warning title=Invalid file permissions automatically fixed::$line"
+      done
+
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v2
+
+  deploy:
+
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/node@master
       env:
-        SNYK_TOKEN: 7c3afaa8-94a9-4af9-b603-82ec87fd3ae3
+        SNYK_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
     - name: Deploy to Vercel
       run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --confirm
