@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">libraries | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=618ad0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../../assets/img/favicon.ico">
+
+
+    <script src="/../../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+    <script src="/../../../assets/js/vendor/pangu.min.js"></script>
+
+  </head>
+  <body>
+
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">语言设定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/zh-Hans/">
+          <img src="/../../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<div id="libraries-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">网站导航</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/zh-Hans/">主页</a></li>
+        <li><a href="https://editor.p5js.org">编辑器</a></li>
+        <li><a href="/zh-Hans/download/">下载</a></li>
+        <li><a href="/zh-Hans/download/support.html">捐赠</a></li>
+        <li><a href="/zh-Hans/get-started/">入门</a></li>
+        <li><a href="/zh-Hans/reference/">参考文献</a></li>
+        <li><a href="/zh-Hans/libraries/">程式库</a></li>
+        <li><a href="/zh-Hans/learn/">学习</a></li>
+        <li><a href="/zh-Hans/teach/">教学</a></li>
+        <li><a href="/zh-Hans/examples/">范例</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">贡献</a></li>
+        <li><a href="/zh-Hans/books/">书籍</a></li>
+        <li><a href="/zh-Hans/community/">社群</a></li>
+        <li><a href="https://showcase.p5js.org">案例展示</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main id="content">
+      <h1>程式库</h1>
+
+      <h2>如何使用程式库</h2>
+
+      <p>p5.js 程式库可以是任何扩展或延伸 p5.js 核心功能的 JavaScript 代码，它们主要分为两种。核心程式库（<a
+          href="/zh-Hans/reference/#/libraries/p5.sound">p5.sound</a>）是 p5.js 正式发布组的一部分，而社群贡献程式库是由 p5.js 社群成员持有、开发及维持的。</p>
+
+      <p>如果您想在您的绘图内加入任何附加程式库，您只需在 HTML 文件内添加程式库的链接，此链接必须发生在 p5.js 的链接之后。一个 HTML 范例如下：</p>
+      <pre><code class="language-markup">&lt;!doctype html&gt;
+&lt;html>
+&lt;head>
+  &lt;script src="p5.js"&gt;&lt;/script&gt;
+  &lt;script src="p5.sound.js"&gt;&lt;/script&gt;
+  &lt;script src="sketch.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+
+      <h2>制作附加程式库</h2>
+
+      <p>p5.js 欢迎任何人所制作的附加程式库！请参考
+        <a href="https://github.com/processing/p5.js/blob/main/contributor_docs/creating_libraries.md">
+          程式库编辑教程（英文页面）</a>
+        以了解更多关于如何制作附加程式库的步骤。
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWWb95cfvosaIFI7msA7XC5zOEVsNruaA5klN1jH95ESJVcw/viewform"
+          target="_blank">如果您编辑了一个附加程式库并且希望将其显示在此页面，请填入这份表格！</a></p>
+
+      
+      
+      <h2 class="tutorial-title">核心程式库</h2>
+      
+      
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="/zh-Hans/reference/#/libraries/p5.sound" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.sound.jpg">
+              <h3>p5.sound</h3>
+            </a>
+          </div>
+          <p>p5.sound 使用 Web Audio 扩展 p5 的功能，提供音频输入、播放、分析及合成功能。 作者：
+            <a href="https://www.jasonsigal.cc/"
+              target="_blank">Jason Sigal</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+        
+      
+      <h2 class="tutorial-title">社群贡献程式库</h2>
+      
+      
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://tetoki.eu/asciiart" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/asciiart.jpg">
+              <h3>asciiart</h3>
+            </a>
+          </div>
+          <p>p5.asciiart 是个简单易使用的图像 - ASCII 画作转换器。 作者：
+            <a href="https://paweljanicki.jp"
+              target="_blank">Pawel Janicki</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://c2js.org/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/c2.js.jpg">
+              <h3>c2.js</h3>
+            </a>
+          </div>
+          <p>c2.js 是基于计算几何、物理模拟、进化算法和其他模块的创作编程 JavaScript 库。 作者：
+            <a href="https://renyuan.io/"
+              target="_blank">Ren Yuan</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/OlafVal/CO2Budget.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/CO2Budget.js.jpg">
+              <h3>CO2Budget.js</h3>
+            </a>
+          </div>
+          <p>该库向与p5 * js相关联的编码人员，设计师和艺术家的创意社区开放了CO2-Countdown的概念。 作者：
+            <a href="http://projects.olafval.de/p5-co2budget-js/"
+              target="_blank">Olaf Val</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/markroland/concaveHullJS" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/Concave_Hull.jpg">
+              <h3>Concave Hull</h3>
+            </a>
+          </div>
+          <p>计算2D空间中一组点的凹壳。 作者：
+            <a href="https://markroland.com"
+              target="_blank">Mark Roland</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jagracar/grafica.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/grafica.js.jpg">
+              <h3>grafica.js</h3>
+            </a>
+          </div>
+          <p>grafica.js 让您在您的 p5.js 绘图中添加简单但高度可配置的 2D 图表。 作者：
+            <a href="https://jagracar.com/p5jsSketches.php"
+              target="_blank">Javier Graciá Carpio</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/zturtledog/I_AM_UI/blob/main/I_AM_UI.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/I_AM_UI.jpg">
+              <h3>I_AM_UI</h3>
+            </a>
+          </div>
+          <p>一个用户界面库。 作者：
+            <a href="https://github.com/zturtledog"
+              target="_blank">sam oakes</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/cvalenzuela/Mappa" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/mappa.jpg">
+              <h3>mappa</h3>
+            </a>
+          </div>
+          <p>Mappa 提供一系列给静态地图、重叠地图及地理数据的工具。特别适用于制作使用地理位置的应用程式。 作者：
+            <a href="https://github.com/cvalenzuela/"
+              target="_blank">Cristóbal Valenzuela</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jtnimoy/marching" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/marching.jpg">
+              <h3>marching</h3>
+            </a>
+          </div>
+          <p>光栅到向量转换，等值面。 作者：
+            <a href="https://jtnimoy.cc/"
+              target="_blank">JT Nimoy</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://ml5js.org/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/ml5.js.jpg">
+              <h3>ml5.js</h3>
+            </a>
+          </div>
+          <p>建在Tensorflow.js的基础之上，ml5.js提供更简单的网页中使用机器学习算法和模型的方法。 作者：
+            <a href="https://ml5js.org/"
+              target="_blank">NYU ITP/IMA and contributors</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/nickmcintyre/numero" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/numero.jpg">
+              <h3>numero</h3>
+            </a>
+          </div>
+          <p>A friendly and intuitive math library for p5.js. 作者：
+            <a href="https://mcintyre.io"
+              target="_blank">Nick McIntyre</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/vanevery/p5LiveMedia" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5LiveMedia.jpg">
+              <h3>p5LiveMedia</h3>
+            </a>
+          </div>
+          <p>实时音频、视频、画布和数据共享。 作者：
+            <a href="http://www.walking-productions.com/notslop/"
+              target="_blank">Shawn Van Every</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://p5play.org" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5play.jpg">
+              <h3>p5play</h3>
+            </a>
+          </div>
+          <p>p5play 提供图像、动画、输入及碰撞检测功能以方便制作游戏或游戏类程式。 作者：
+            <a href="https://www.youtube.com/@p5play_quinton-ashley"
+              target="_blank">Quinton Ashley</a>, <a href="https://www.molleindustria.org/"
+              target="_blank">Paolo Pedercini</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://www.npmjs.com/package/p5snap" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5snap.jpg">
+              <h3>p5snap</h3>
+            </a>
+          </div>
+          <p>p5snap is a command-line interface that creates and saves snapshots of a  p5 sketchp5snap is a command-line interface that creates and saves snapshots  of a p5 sketch on an interval. 作者：
+            <a href="https://zachkrall.com"
+              target="_blank">Zach Krall</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/FreddieRa/p5.3D" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.3D.jpg">
+              <h3>p5.3D</h3>
+            </a>
+          </div>
+          <p>WebGL 3D 文字及图像。 作者：
+            <a href="https://freddierawlins.wixsite.com/site"
+              target="_blank">Freddie Rawlins</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://wixette.github.io/p5.animS/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.animS.jpg">
+              <h3>p5.animS</h3>
+            </a>
+          </div>
+          <p>p5.animS 通过渲染它们的绘制过程来为 p5.js 形状提供动画效果。 作者：
+            <a href="https://github.com/wixette"
+              target="_blank">Yonggang Wang</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/peilingjiang/p5.bezier" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.bezier.jpg">
+              <h3>p5.bezier</h3>
+            </a>
+          </div>
+          <p>一个画高阶贝塞尔曲线的库。 作者：
+            <a href="https://www.jpl.design"
+              target="_blank">Peiling Jiang</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://itpnyu.github.io/p5ble-website/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.ble.jpg">
+              <h3>p5.ble</h3>
+            </a>
+          </div>
+          <p>一个启用 BLE 装置及 p5 绘图之间的沟通的 Javascript 编程库。 作者：
+            <a href="https://1023.io"
+              target="_blank">Yining Shi</a>, <a href="https://www.jingwen-zhu.com/"
+              target="_blank">Jingwen Zhu</a>, <a href="https://tigoe.com/"
+              target="_blank">Tom Igoe</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/sarahgp/p5bots" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.bots.jpg">
+              <h3>p5.bots</h3>
+            </a>
+          </div>
+          <p>p5.bots 让您通过网页浏览器和 Arduino（或其他微处理器）互动。您可以使用传感器资料来驱动绘图会使用绘图来驱动 LED、马达等等！ 作者：
+            <a href="http://www.sarahgp.com"
+              target="_blank">Sarah Groff-Palermo</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://www.nicoatek.com/js_libraries/p5.button.min.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.button.jpg">
+              <h3>p5.button</h3>
+            </a>
+          </div>
+          <p>一个小型的函数库，可直接在 p5.js 画布中设计和渲染简单或样式化按钮。 作者：
+            <a href="https://www.nicoatek.com/p5button"
+              target="_blank">Nicolas ATEK</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/koerismo/p5.buttons" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.buttons.jpg">
+              <h3>p5.buttons</h3>
+            </a>
+          </div>
+          <p>一个旨在简化按钮脚本化的库。 作者：
+            <a href="https://github.com/koerismo"
+              target="_blank">Jadon L</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/tapioca24/p5.capture" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.capture.jpg">
+              <h3>p5.capture</h3>
+            </a>
+          </div>
+          <p>p5.capture 提供了一个简单易用的 GUI，可轻松记录 p5.js 动画， 并以各种格式（webm、gif、mp4、png、jpg 和 webp）输出视频文件。 作者：
+            <a href="https://github.com/tapioca24"
+              target="_blank">tapioca24</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Lartu/p5.clickable" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.clickable.jpg">
+              <h3>p5.clickable</h3>
+            </a>
+          </div>
+          <p>事件驱动、易使用的 p5.js 按钮编程库。 作者：
+            <a href="https://www.lartu.net"
+              target="_blank">Martín del Río</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jtnimoy/p5.cmyk.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.cmyk.js.jpg">
+              <h3>p5.cmyk.js</h3>
+            </a>
+          </div>
+          <p>CMYK 色彩空间。 作者：
+            <a href="https://jtnimoy.cc/"
+              target="_blank">JT Nimoy</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bmoren/p5.collide2D" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.collide2D.jpg">
+              <h3>p5.collide2D</h3>
+            </a>
+          </div>
+          <p>p5.collide2D 提供一系列工具适用于计算在 p5.js 内的 2D 几何形状的碰撞检测。 作者：
+            <a href="https://www.benmoren.com/"
+              target="_blank">Ben Moren</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/zachmohammed/P5.Create" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/P5.Create.jpg">
+              <h3>P5.Create</h3>
+            </a>
+          </div>
+          <p>P5.create 是一个旨在有效创建游戏的库，提供保存、动画、碰撞和标记功能。 作者：
+            <a href="https://github.com/zachmohammed"
+              target="_blank">Zach Mohammed</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://www.npmjs.com/package/p5.createloop" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.createloop.jpg">
+              <h3>p5.createloop</h3>
+            </a>
+          </div>
+          <p>使用一行编码制作运用噪声及 GIF 输出的动画循环。 作者：
+            <a href="https://www.piratesjustar.com/"
+              target="_blank">Peter Hayman</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Smilebags/p5.dimensions.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.dimensions.jpg">
+              <h3>p5.dimensions</h3>
+            </a>
+          </div>
+          <p>p5.dimensions 扩展 p5.js 的向量功能以包括更高维数的计算。 作者：
+            <a href="https://github.com/Smilebags"
+              target="_blank">Smilebags</a>, <a href="https://github.com/max0410"
+              target="_blank">Max Segal</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/freshfork/p5.EasyCam" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.EasyCam.jpg">
+              <h3>p5.EasyCam</h3>
+            </a>
+          </div>
+          <p>简单的3D摄像机控制，具有惯性平移，缩放和旋转功能。 主要贡献者 Thomas Diewald。 作者：
+            <a href="https://jwilliamdunn.com"
+              target="_blank">jWilliam Dunn</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/loneboarder/p5.experience.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.experience.jpg">
+              <h3>p5.experience</h3>
+            </a>
+          </div>
+          <p>提供 p5.js 附加事件聆听功能并用以制作基于画布的网页应用程序的程式库。 作者：
+            <a href="https://github.com/loneboarder"
+              target="_blank">Felix Meichelböck</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/machineagency/p5.fab" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.fab.jpg">
+              <h3>p5.fab</h3>
+            </a>
+          </div>
+          <p>p5.fab 可以从 p5.js 控制数字制造机器。 作者：
+            <a href="https://blairsubbaraman.com/"
+              target="_blank">Blair Subbaraman</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/davepagurek/p5.filterRenderer" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.filterRenderer.jpg">
+              <h3>p5.filterRenderer</h3>
+            </a>
+          </div>
+          <p>A library for p5.js WebGL mode to draw with depth blur and shadows. 作者：
+            <a href="https://www.davepagurek.com/"
+              target="_blank">Dave Pagurek</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://idmnyu.github.io/p5.js-func" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.func.jpg">
+              <h3>p5.func</h3>
+            </a>
+          </div>
+          <p>p5.func 是个提供新物件及时间、频率和空间函数操作的 p5 扩展程式库。 作者：
+            <a href="https://lukedubois.com/"
+              target="_blank">R. Luke DuBois</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bmoren/p5.geolocation" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.geolocation.jpg">
+              <h3>p5.geolocation</h3>
+            </a>
+          </div>
+          <p>p5.geolocation 提供给 p5.js 获取、观察、计算使用者地理位置及地理围栏的功能。 作者：
+            <a href="https://www.benmoren.com/"
+              target="_blank">Ben Moren</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://charlie-roberts.com/gibber/p5-gibber/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.gibber.jpg">
+              <h3>p5.gibber</h3>
+            </a>
+          </div>
+          <p>p5.gibber 提供快速音乐排序及音频合成功能。 作者：
+            <a href="https://charlie-roberts.com"
+              target="_blank">Charlie Roberts</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://p5.glitch.me/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.glitch.jpg">
+              <h3>p5.glitch</h3>
+            </a>
+          </div>
+          <p>p5.glitch extends p5.js for glitching images and binary files. 作者：
+            <a href="https://teddavis.org"
+              target="_blank">Ted Davis</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Buggem/processing.input/blob/main/p5.input.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.input.jpg">
+              <h3>p5.input</h3>
+            </a>
+          </div>
+          <p>为 p5.js 添加更多按键支持。 作者：
+            <a href="https://github.com/Buggem/"
+              target="_blank">Max Parry</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bitcraftlab/p5.gui" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.gui.jpg">
+              <h3>p5.gui</h3>
+            </a>
+          </div>
+          <p>p5.gui 提供您的 p5.js 绘图一系列图形用户界面。 作者：
+            <a href="https://www.bitcraftlab.com/"
+              target="_blank">Martin Schneider</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/monteslu/p5.j5" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.j5.jpg">
+              <h3>p5.j5</h3>
+            </a>
+          </div>
+          <p>The full Johnny-Five.io Nodebots/robotics library for Arduino and other  microcontrollers made to work directly in browser with WebSerial or WebUSB. 作者：
+            <a href="https://twitter.com/monteslu"
+              target="_blank">Luis Montes</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://microsoft.github.io/jacdac-docs/clients/javascript/p5js/ " target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.jacdac.jpg">
+              <h3>p5.jacdac</h3>
+            </a>
+          </div>
+          <p>p5js 的即插即用的微控制器。 作者：
+            <a href="https://twitter.com/pelikhan"
+              target="_blank">Jonathan de Halleux</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Vamoss/p5.joystick" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.joystick.jpg">
+              <h3>p5.joystick</h3>
+            </a>
+          </div>
+          <p>连接和操作物理操纵杆。 作者：
+            <a href="https://vamoss.com.br"
+              target="_blank">Vamoss</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bmoren/p5.localmessage" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.localmessage.jpg">
+              <h3>p5.localmessage</h3>
+            </a>
+          </div>
+          <p>p5.localmessage 提供一个简易的界面以在不同绘图之间传递信息并使同时使用多个视窗制作绘图更容易！ 作者：
+            <a href="https://benmoren.com"
+              target="_blank">Ben Moren</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jdeboi/p5.mapper" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.mapper.jpg">
+              <h3>p5.mapper</h3>
+            </a>
+          </div>
+          <p>p5.mapper 是用于 p5.js 的投影映射库。该库使编码和基点交互、算法作品变得更加容易。 作者：
+            <a href="https://jdeboi.com/"
+              target="_blank">Jenna deBoisblanc</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://editor.p5js.org/bharathsatheesan7a/sketches/NHvinWyye" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.math.js.jpg">
+              <h3>p5.math.js</h3>
+            </a>
+          </div>
+          <p>JavaScript 的数学运算已转换为简单的人类语言，以便能够快速理解。 作者：
+            <a href="https://github.com/bharathsatheesan"
+              target="_blank">Bharath Satheesan</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bobcgausa/cook-js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.particle.jpg">
+              <h3>p5.particle</h3>
+            </a>
+          </div>
+          <p>Particle 及 Fountain 物件可以用以制作数据驱动效果，该数据可来自使用者互动或 JSON 文件。 作者：
+            <a href="http://professorcook.org/"
+              target="_blank">Robert Cook</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jbakse/p5.party" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.party.jpg">
+              <h3>p5.party</h3>
+            </a>
+          </div>
+          <p>p5.party is a library for easily creating networked multiuser games, apps,  and sketches. 作者：
+            <a href="http://justinbakse.com"
+              target="_blank">Justin Bakse</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/antiboredom/p5.patgrad" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.PatGrad.jpg">
+              <h3>p5.PatGrad</h3>
+            </a>
+          </div>
+          <p>p5.PatGrad 可让您向您的作品添加图案和渐变。 作者：
+            <a href="https://lav.io"
+              target="_blank">Sam Lavigne</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/SYM380/p5.pattern" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.pattern.jpg">
+              <h3>p5.pattern</h3>
+            </a>
+          </div>
+          <p>一个用于 p5.js 的图案绘制库。 作者：
+            <a href="https://twitter.com/hyappy717"
+              target="_blank">Taichi Sayama</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/liz-peng/p5.Polar" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.Polar.jpg">
+              <h3>p5.Polar</h3>
+            </a>
+          </div>
+          <p>p5.Polar 提供了数学抽象，使得创建美丽、万花筒式、径向图案变得容易。 作者：
+            <a href="https://github.com/liz-peng"
+              target="_blank">Liz Peng</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://osresearch.github.io/p5.projection/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.projection.jpg">
+              <h3>p5.projection</h3>
+            </a>
+          </div>
+          <p>轻松将作品映射到现实世界表面上的投影映射。 作者：
+            <a href="https://trmm.net/"
+              target="_blank">Trammell Hudson</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://objetos.github.io/p5.quadrille.js/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.quadrille.js.jpg">
+              <h3>p5.quadrille.js</h3>
+            </a>
+          </div>
+          <p>p5.js 九宫格库。 作者：
+            <a href="https://github.com/nakednous"
+              target="_blank">Jean Pierre Charalambos</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/doriclaudino/p5.recorder" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.recorder.jpg">
+              <h3>p5.recorder</h3>
+            </a>
+          </div>
+          <p>Record sketch canvas and audio. 作者：
+            <a href="https://github.com/doriclaudino"
+              target="_blank">Dori Claudino</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://antiboredom.github.io/p5.riso" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.Riso.jpg">
+              <h3>p5.Riso</h3>
+            </a>
+          </div>
+          <p>p5.Riso 是个用来生成适合 Risograph 印刷的文件的程式库。它能帮助您将您的绘图转换成多色印刷。 作者：
+            <a href="https://lav.io/"
+              target="_blank">Sam Lavigne</a>, <a href="https://tegabrain.com/"
+              target="_blank">Tega Brain</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/mveteanu/p5.SceneManager" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.scenemanager.jpg">
+              <h3>p5.scenemanager</h3>
+            </a>
+          </div>
+          <p>p5.SceneManager 帮助您制作有多个状态/场景的绘图。各个场景就比如一个在主要绘图内的绘图。 作者：
+            <a href="https://github.com/mveteanu/"
+              target="_blank">Marian Veteanu</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bohnacker/p5js-screenPosition" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.screenPosition.jpg">
+              <h3>p5.screenPosition</h3>
+            </a>
+          </div>
+          <p>在 p5.js 内添加来自 Processing 的 screenX 及 screenY 功能。 作者：
+            <a href="https://hartmut-bohnacker.de/"
+              target="_blank">Hartmut Bohnacker</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/generative-light/p5.scribble.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.scribble.jpg">
+              <h3>p5.scribble</h3>
+            </a>
+          </div>
+          <p>绘制看起来粗略的 2D 形状。作者为 Janneck Wullschleger，来源自 Processing 原有程式库的代码移植。 作者：
+            <a href="https://github.com/gicentre/handy"
+              target="_blank">handy</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/vanevery/p5.serialport" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.serialport.jpg">
+              <h3>p5.serialport</h3>
+            </a>
+          </div>
+          <p>p5.serial enables serial communication between devices that support serial (RS-232) and p5 sketches running in the browser. 作者：
+            <a href="https://www.walking-productions.com/notslop/abou/"
+              target="_blank">Shawn Van Every</a>, <a href="https://kaganjd.github.io/portfolio/"
+              target="_blank">Jen Kagan</a>, <a href="https://tigoe.net/"
+              target="_blank">Tom Igoe</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/gaba5/p5.shape.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.shape.js.jpg">
+              <h3>p5.shape.js</h3>
+            </a>
+          </div>
+          <p>一个为 p5.js 添加更多简单图形的程式库。 作者：
+            <a href="https://github.com/gaba5"
+              target="_blank">Sebastien Lorentz</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/GarrettMFlynn/p5.js-slides" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/P5.slides.jpg">
+              <h3>P5.slides</h3>
+            </a>
+          </div>
+          <p>p5.slides is a presentation platform written in p5.js. 作者：
+            <a href="http://garrettflynn.com/"
+              target="_blank">Garrett Flynn</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://idmnyu.github.io/p5.js-speech/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.speech.jpg">
+              <h3>p5.speech</h3>
+            </a>
+          </div>
+          <p>p5.speech 提供简单易用的 Web Speech 及语音识别的 API，使制作能说能听的绘图更加容易。 作者：
+            <a href="https://lukedubois.com/"
+              target="_blank">R. Luke DuBois</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/eltapir/p5.start2d.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.start2d.js.jpg">
+              <h3>p5.start2d.js</h3>
+            </a>
+          </div>
+          <p>使用像素、毫米、厘米或英寸为单位来制作 2D 静态艺术的 p5 附加程式库。 作者：
+            <a href="https://github.com/eltapir"
+              target="_blank">Kris HEYSE</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/two-ticks/p5.teach.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.teach.jpg">
+              <h3>p5.teach</h3>
+            </a>
+          </div>
+          <p>一个面向初学者的数学动画库，由 Nick McIntyre 和 Jithin KS 导师创建。 作者：
+            <a href="https://www.linkedin.com/in/aditya-siddheshwar/"
+              target="_blank">Aditya Siddheshwar</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/linux-man/p5.tiledmap" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.tiledmap.jpg">
+              <h3>p5.tiledmap</h3>
+            </a>
+          </div>
+          <p>p5.tiledmap 提供绘图及便利功能以在您的绘图中加入地图。 作者：
+            <a href="https://softlab.pt/"
+              target="_blank">Caldas Lopes</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/scottkildall/p5.timer" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.timer.jpg">
+              <h3>p5.timer</h3>
+            </a>
+          </div>
+          <p>该库执行异步定时功能，例如倒计时、一次性定时器、%时间已过等，并封装 millis() 函数和其他相关的计算， 这些计算通常会拖慢您的代码。 作者：
+            <a href="https://www.kildall.com"
+              target="_blank">Scott Kildall</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/L05/p5.touchgui" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.touchgui.jpg">
+              <h3>p5.touchgui</h3>
+            </a>
+          </div>
+          <p>p5.js 多点触控及鼠标图形用户界面程式库。 作者：
+            <a href="https://L05.is"
+              target="_blank">Carlos L05 Garcia</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Milchreis/p5.tween" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.tween.jpg">
+              <h3>p5.tween</h3>
+            </a>
+          </div>
+          <p>With p5.tween you can create easily animations as tween for your objects and  shapes. 作者：
+            <a href="https://github.com/Milchreis"
+              target="_blank">Nick Müller</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/alptugan/p5.utils" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.utils.jpg">
+              <h3>p5.utils</h3>
+            </a>
+          </div>
+          <p>针对我的创意编程课提供的一组实用程序和附加功能，旨在帮助学生。 作者：
+            <a href="https://www.alptugan.com"
+              target="_blank">ALP TUĞAN</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/calebfoss/p5.videorecorder" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.videorecorder.jpg">
+              <h3>p5.videorecorder</h3>
+            </a>
+          </div>
+          <p>使用音频记录您的画布，使其成为视频文件。 作者：
+            <a href="https://www.calebfoss.com/"
+              target="_blank">Caleb Foss</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Dozed12/p5.voronoi" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.voronoi.jpg">
+              <h3>p5.voronoi</h3>
+            </a>
+          </div>
+          <p>p5.voronoi 提供您的 p5.js 绘图一系列用以绘制及使用 voronoi 图的工具。 作者：
+            <a href="https://github.com/Dozed12"
+              target="_blank">Francisco Moreira</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/limzykenneth/p5.wasm" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.wasm.jpg">
+              <h3>p5.wasm</h3>
+            </a>
+          </div>
+          <p>p5.wasm 是个使用 Rust 编写并编译成 WebAssembly 的附加程式库，它提供一些常用的 p5.js 功能。 作者：
+            <a href="https://github.com/limzykenneth"
+              target="_blank">Kenneth Lim</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/ars2062/p5-wasm" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.wasm.core.jpg">
+              <h3>p5.wasm.core</h3>
+            </a>
+          </div>
+          <p>用于 p5.js 的 Web Assembly 核心。 作者：
+            <a href="https://github.com/ars2062"
+              target="_blank">Arshia Moghaddam</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/gohai/p5.webserial/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.webserial.jpg">
+              <h3>p5.webserial</h3>
+            </a>
+          </div>
+          <p>基于 Web Serial API（仅适用于 Chrome 和 Edge）库，可从浏览器内部与串行设备进行交互。 作者：
+            <a href="https://github.com/gohai/"
+              target="_blank">Gottfried Haider</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/ongzzzzzz/p5.web-serial" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.web-serial.jpg">
+              <h3>p5.web-serial</h3>
+            </a>
+          </div>
+          <p>一个 Web Serial API 的程序，使用户可以无需设置地把 p5js 程序连接 Arduino 之类的单片机。 作者：
+            <a href="https://ongzz.ml"
+              target="_blank">Ong Zhi Zheng</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://p5xr.org/#/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.xr.jpg">
+              <h3>p5.xr</h3>
+            </a>
+          </div>
+          <p>一个使用p5创建VR和AR草图的库。 作者：
+            <a href="https://www.stalgiagrigg.name/"
+              target="_blank">Stalgia Grigg</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/phywand/pdl-library/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/pdl.library.jpg">
+              <h3>pdl.library</h3>
+            </a>
+          </div>
+          <p>A set of functions and classes to create interactive diagrams for teaching  and learning physics. 作者：
+            <a href="https://slowthinkingphysics.net"
+              target="_blank">Ian Lawrence</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Gherciu/react-p5" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/react-p5.jpg">
+              <h3>react-p5</h3>
+            </a>
+          </div>
+          <p>This library lets you integrate p5 Sketches into your React App. 作者：
+            <a href="https://gherciu.github.io/"
+              target="_blank">Gherciu Gheorghe</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://rednoise.org/rita" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/rita.js.jpg">
+              <h3>rita.js</h3>
+            </a>
+          </div>
+          <p>RiTa.js 提供语言分析功能并也提供生成文字的功能。 作者：
+            <a href="https://rednoise.org/daniel"
+              target="_blank">Daniel C. Howe</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://codeforartists.com/RotatingKnobMaker" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/Rotating_knobs.jpg">
+              <h3>Rotating knobs</h3>
+            </a>
+          </div>
+          <p>使用自定图形及自定返回值范围，制作您能旋转的旋钮。 作者：
+            <a href="https://codeforartists.com"
+              target="_blank">Miles DeCoster</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/pfe1223/Shape5js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/Shape5.jpg">
+              <h3>Shape5</h3>
+            </a>
+          </div>
+          <p>Shape5 是个基本的 2D 程式库，用于教导第一次学习使用代码的小学生。 作者：
+            <a href="https://github.com/pfe1223"
+              target="_blank">Patrick Ester</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/makeyourownalgorithmicart/simple.js/wiki" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/simple.js.jpg">
+              <h3>simple.js</h3>
+            </a>
+          </div>
+          <p>面向年轻或新手编程者提供的帮助函数和默认值。 作者：
+            <a href="https://github.com/makeyourownalgorithmicart/simple.js/wiki"
+              target="_blank">Tariq Rashid</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/andrewtacon/p5.tiledplay.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/TiledPlay.jpg">
+              <h3>TiledPlay</h3>
+            </a>
+          </div>
+          <p>A small library to bridge the functionality of p5.js, p5.play.js and  p5.tiled.js to easily create 2D platformer games using javascript. 作者：
+            <a href="https://github.com/andrewtacon"
+              target="_blank">Andrew Tacon</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://www.tramontana.xyz" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/tramontana.jpg">
+              <h3>tramontana</h3>
+            </a>
+          </div>
+          <p>Tramontana 是个可以用在多种设备上（iOS、Android、tramontana Board等）制作互动环境、互动空间或单纯测试大规模实验的简易平台。 作者：
+            <a href="https://www.pierdr.com"
+              target="_blank">Pierluigi Dalla Rosa</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/CodeGuppyPrograms/TurtleGFX" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/TurtleGFX.jpg">
+              <h3>TurtleGFX</h3>
+            </a>
+          </div>
+          <p>TurtleGFX allows to code with Turtle Graphics in JavaScript.  Great for education and creative coding. 作者：
+            <a href="https://codeguppy.com"
+              target="_blank">CodeGuppy</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://tetoki.eu/vida" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/vida.jpg">
+              <h3>vida</h3>
+            </a>
+          </div>
+          <p>Vida 是个添加摄像头（或视屏）运动测试及团块跟踪功能的简单程式库。 作者：
+            <a href="https://paweljanicki.jp"
+              target="_blank">Pawel Janicki</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://webmidijs.org/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/WEBMIDI.js.jpg">
+              <h3>WEBMIDI.js</h3>
+            </a>
+          </div>
+          <p>可轻松地从 p5 中发送和接收 MIDI 消息的库。 作者：
+            <a href="https://djip.co"
+              target="_blank">Jean-Philippe Côté</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+        
+
+
+    </main>
+    
+    <footer>
+        <h2 class="sr-only">归功于</h2>
+        <ul id="footer-menu-socials" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">论坛</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+    
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="/zh-Hans/">主页</a></li>
+          <li><a href="https://editor.p5js.org">编辑器</a></li>
+          <li><a href="/zh-Hans/download/">下载</a></li>
+          <li><a href="/zh-Hans/download/support.html">捐赠</a></li>
+          <li><a href="/zh-Hans/get-started/">入门</a></li>
+          <li><a href="/zh-Hans/reference/">参考文献</a></li>
+          <li><a href="/zh-Hans/libraries/">程式库</a></li>
+          <li><a href="/zh-Hans/learn/">学习</a></li>
+          <li><a href="/zh-Hans/teach/">教学</a></li>
+          <li><a href="/zh-Hans/examples/">范例</a></li>
+          <li><a href="https://p5js.org/contributor-docs/#/">贡献</a></li>
+          <li><a href="/zh-Hans/books/">书籍</a></li>
+          <li><a href="/zh-Hans/community/">社群</a></li>
+          <li><a href="https://showcase.p5js.org">案例展示</a></li>
+        </ul>  
+        
+        <p>
+            p5.js 目前由<a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a>领导，原创者为<a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>。p5.js 是在<a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a>和<a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>的支持下由其合作社群所开发。形象及平面设计<a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>。<a href="/zh-Hans/copyright.html">&copy; 版权信息</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/zh-Hans/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","es","hi","ko","zh-Hans"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">libraries | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=618ad0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../../assets/img/favicon.ico">
+
+
+    <script src="/../../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">Preferencias de idioma</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/es/">
+          <img src="/../../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<div id="libraries-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">Navegación del sitio</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/es/">Inicio</a></li>
+        <li><a href="https://editor.p5js.org">Editor</a></li>
+        <li><a href="/es/download/">Descargar</a></li>
+        <li><a href="/es/download/support.html">Donar</a></li>
+        <li><a href="/es/get-started/">Empezar</a></li>
+        <li><a href="/es/reference/">Referencia</a></li>
+        <li><a href="/es/libraries/">Bibliotecas</a></li>
+        <li><a href="/es/learn/">Aprender</a></li>
+        <li><a href="/es/teach/">Enseñar</a></li>
+        <li><a href="/es/examples/">Ejemplos</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">Contribuir</a></li>
+        <li><a href="/es/books/">Libros</a></li>
+        <li><a href="/es/community/">Comunidad</a></li>
+        <li><a href="https://showcase.p5js.org">Showcase</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main id="content">
+      <h1>Bibliotecas</h1>
+
+      <h2>Usando una biblioteca</h2>
+
+      <p>Una biblioteca p5.js puede ser cualquier código p5.js que extiende o añade a las funcionalidades centrales de p5.js. Existen dos tipos de bibliotecas. Las bibliotecas centrales (<a
+          href="/es/reference/#/libraries/p5.sound">p5.sound</a>) son parte de la distribución de p5.js, mientras que las bibliotecas contribuidas son mantenidas y  desarrolladas por y de propiedad de los miembros de la comunidad de p5.js.</p>
+
+      <p>Para incluir una biblioteca en tu bosquejo, enlázala en tu archivo HTML, después que hayas enlazado p5.js. Un archivo HTML como ejemplo podría lucir así:</p>
+      <pre><code class="language-markup">&lt;!doctype html&gt;
+&lt;html>
+&lt;head>
+  &lt;script src="p5.js"&gt;&lt;/script&gt;
+  &lt;script src="p5.sound.js"&gt;&lt;/script&gt;
+  &lt;script src="sketch.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+
+      <h2>Crea tu propia biblioteca</h2>
+
+      <p>p5.js acepta las bibliotecas contribuidas por la comunidad p5.js Revisa el
+        <a href="https://github.com/processing/p5.js/blob/main/contributor_docs/creating_libraries.md">
+          tutorial de bibliotecas</a>
+        para revisar los detalles específicos de cómo crear una.
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWWb95cfvosaIFI7msA7XC5zOEVsNruaA5klN1jH95ESJVcw/viewform"
+          target="_blank">¡Si has creado una biblioteca y quieres incluirla en esta página, llena este formulario!</a></p>
+
+      
+      
+      <h2 class="tutorial-title">Bibliotecas principales</h2>
+      
+      
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="/es/reference/#/libraries/p5.sound" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.sound.jpg">
+              <h3>p5.sound</h3>
+            </a>
+          </div>
+          <p>p5.sound extiende p5 con funcionalidad de Web Audio, incluyendo entrada de audio, reproducción, análisis y síntesis. Creada por:
+            <a href="https://www.jasonsigal.cc/"
+              target="_blank">Jason Sigal</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+        
+      
+      <h2 class="tutorial-title">Bibliotecas de la comunidad</h2>
+      
+      
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://tetoki.eu/asciiart" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/asciiart.jpg">
+              <h3>asciiart</h3>
+            </a>
+          </div>
+          <p>p5.asciiart te permite convertir de forma simple y fácil imágenes - a - arte ASCII dentro de p5js. Creada por:
+            <a href="https://paweljanicki.jp"
+              target="_blank">Pawel Janicki</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://c2js.org/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/c2.js.jpg">
+              <h3>c2.js</h3>
+            </a>
+          </div>
+          <p>c2.js es una libreria de JavaScript para programación creativa basada en geometría computacional, simulación de física, algoritmos evolutivos y otros modulos. Creada por:
+            <a href="https://renyuan.io/"
+              target="_blank">Ren Yuan</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/OlafVal/CO2Budget.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/CO2Budget.js.jpg">
+              <h3>CO2Budget.js</h3>
+            </a>
+          </div>
+          <p>Esta biblioteca abre la idea de la cuenta regresiva de CO2 a las comunidades creativas de codificadores, diseñadores y artistas asociados con p5*js. Creada por:
+            <a href="http://projects.olafval.de/p5-co2budget-js/"
+              target="_blank">Olaf Val</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/markroland/concaveHullJS" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/Concave_Hull.jpg">
+              <h3>Concave Hull</h3>
+            </a>
+          </div>
+          <p>Cálcula un Concave Hull desde un conjunto de puntos en un espacio 2D. Creada por:
+            <a href="https://markroland.com"
+              target="_blank">Mark Roland</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jagracar/grafica.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/grafica.js.jpg">
+              <h3>grafica.js</h3>
+            </a>
+          </div>
+          <p>grafica.js te permite añadir gráficas 2D simples pero altamente configurables a tus bosquejos de p5.js. Creada por:
+            <a href="https://jagracar.com/p5jsSketches.php"
+              target="_blank">Javier Graciá Carpio</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/zturtledog/I_AM_UI/blob/main/I_AM_UI.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/I_AM_UI.jpg">
+              <h3>I_AM_UI</h3>
+            </a>
+          </div>
+          <p>Una biblioteca de interfaz de usuario. Creada por:
+            <a href="https://github.com/zturtledog"
+              target="_blank">sam oakes</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/cvalenzuela/Mappa" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/mappa.jpg">
+              <h3>mappa</h3>
+            </a>
+          </div>
+          <p>Mappa es una biblioteca que provee un conjunto de herramientas para trabajar con mapas estáticos y geo-datos, además de otras herramientas útiles para desarrollar representaciones visuales de datos con geolocalización. Creada por:
+            <a href="https://github.com/cvalenzuela/"
+              target="_blank">Cristóbal Valenzuela</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jtnimoy/marching" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/marching.jpg">
+              <h3>marching</h3>
+            </a>
+          </div>
+          <p>Conversión de trama a vector, isosuperficies. Creada por:
+            <a href="https://jtnimoy.cc/"
+              target="_blank">JT Nimoy</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://ml5js.org/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/ml5.js.jpg">
+              <h3>ml5.js</h3>
+            </a>
+          </div>
+          <p>ml5.js esta construido sobre TensorFlow.js y provee un acceso amigable a algoritmos de inteligencia artificial y machine learning desde el navegador. Creada por:
+            <a href="https://ml5js.org/"
+              target="_blank">NYU ITP/IMA and contributors</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/nickmcintyre/numero" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/numero.jpg">
+              <h3>numero</h3>
+            </a>
+          </div>
+          <p>Una biblioteca matemática fácil e intuitiva para p5.js Creada por:
+            <a href="https://mcintyre.io"
+              target="_blank">Nick McIntyre</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/vanevery/p5LiveMedia" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5LiveMedia.jpg">
+              <h3>p5LiveMedia</h3>
+            </a>
+          </div>
+          <p>Audio, video, canvas e intercambio de datos en tiempo real. Creada por:
+            <a href="http://www.walking-productions.com/notslop/"
+              target="_blank">Shawn Van Every</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://p5play.org" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5play.jpg">
+              <h3>p5play</h3>
+            </a>
+          </div>
+          <p>p5play es para crear arte interactivo y video juegos con el motor de física Box2D. ¡Proporciona sprites, animaciones, detección de entrada mejorada del tecleo, y más! Creada por:
+            <a href="https://www.youtube.com/@p5play_quinton-ashley"
+              target="_blank">Quinton Ashley</a>, <a href="https://www.molleindustria.org/"
+              target="_blank">Paolo Pedercini</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://www.npmjs.com/package/p5snap" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5snap.jpg">
+              <h3>p5snap</h3>
+            </a>
+          </div>
+          <p>p5snap es una interfaz de linea de comandos que crea y guarda capturas de un boceto de p5 en un intervalo. Creada por:
+            <a href="https://zachkrall.com"
+              target="_blank">Zach Krall</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/FreddieRa/p5.3D" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.3D.jpg">
+              <h3>p5.3D</h3>
+            </a>
+          </div>
+          <p>Texto 3D e imágenes en WebGL.  Creada por:
+            <a href="https://freddierawlins.wixsite.com/site"
+              target="_blank">Freddie Rawlins</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://wixette.github.io/p5.animS/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.animS.jpg">
+              <h3>p5.animS</h3>
+            </a>
+          </div>
+          <p>p5.animS anima forma de p5.js renderizando sus procesos de dibujado. Creada por:
+            <a href="https://github.com/wixette"
+              target="_blank">Yonggang Wang</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/peilingjiang/p5.bezier" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.bezier.jpg">
+              <h3>p5.bezier</h3>
+            </a>
+          </div>
+          <p>A library helps draw high-degree Bézier curves with unlimited points. Creada por:
+            <a href="https://www.jpl.design"
+              target="_blank">Peiling Jiang</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://itpnyu.github.io/p5ble-website/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.ble.jpg">
+              <h3>p5.ble</h3>
+            </a>
+          </div>
+          <p>Una biblioteca que facilita la comunicación entre dispositivos BLE y bosquejos p5.js. Creada por:
+            <a href="https://1023.io"
+              target="_blank">Yining Shi</a>, <a href="https://www.jingwen-zhu.com/"
+              target="_blank">Jingwen Zhu</a>, <a href="https://tigoe.com/"
+              target="_blank">Tom Igoe</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/sarahgp/p5bots" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.bots.jpg">
+              <h3>p5.bots</h3>
+            </a>
+          </div>
+          <p>Con p5.bots puedes interactuar con Arduino (u otro microprocesador) desde el navegador. Usa los datos de los sensores para controlar tu bosquejo, usa un bosquejo para controlar LEDs, motores, y más. Creada por:
+            <a href="http://www.sarahgp.com"
+              target="_blank">Sarah Groff-Palermo</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://www.nicoatek.com/js_libraries/p5.button.min.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.button.jpg">
+              <h3>p5.button</h3>
+            </a>
+          </div>
+          <p>Pequeña libreria funcional para diseñar y renderizar simples y estilizados botones directamente en un canvas de p5.js. Creada por:
+            <a href="https://www.nicoatek.com/p5button"
+              target="_blank">Nicolas ATEK</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/koerismo/p5.buttons" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.buttons.jpg">
+              <h3>p5.buttons</h3>
+            </a>
+          </div>
+          <p>Una libreria que pretende simplificar el scripting de botones. Creada por:
+            <a href="https://github.com/koerismo"
+              target="_blank">Jadon L</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/tapioca24/p5.capture" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.capture.jpg">
+              <h3>p5.capture</h3>
+            </a>
+          </div>
+          <p>p5.capture provee un GUI simple para grabar facilmente animaciones de p5.js y archivos de salida de video en varios formatos (webm, gif, mp4, png, jpg, y webp). Creada por:
+            <a href="https://github.com/tapioca24"
+              target="_blank">tapioca24</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Lartu/p5.clickable" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.clickable.jpg">
+              <h3>p5.clickable</h3>
+            </a>
+          </div>
+          <p>Biblioteca para crear botones y eventos fácilmente con p5.js.  Creada por:
+            <a href="https://www.lartu.net"
+              target="_blank">Martín del Río</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jtnimoy/p5.cmyk.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.cmyk.js.jpg">
+              <h3>p5.cmyk.js</h3>
+            </a>
+          </div>
+          <p>Espacio de color cian-magenta-amarillo-negro. Creada por:
+            <a href="https://jtnimoy.cc/"
+              target="_blank">JT Nimoy</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bmoren/p5.collide2D" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.collide2D.jpg">
+              <h3>p5.collide2D</h3>
+            </a>
+          </div>
+          <p>p5.collide2D provee herramientas para calcular detección de colisiones en geometría 2D con p5.js. Creada por:
+            <a href="https://www.benmoren.com/"
+              target="_blank">Ben Moren</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/zachmohammed/P5.Create" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/P5.Create.jpg">
+              <h3>P5.Create</h3>
+            </a>
+          </div>
+          <p>p5.create es una biblioteca que proporciona funciones de guardado, animación, colisión y etiquetado diseñadas para la creación eficiente de juegos. Creada por:
+            <a href="https://github.com/zachmohammed"
+              target="_blank">Zach Mohammed</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://www.npmjs.com/package/p5.createloop" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.createloop.jpg">
+              <h3>p5.createloop</h3>
+            </a>
+          </div>
+          <p>Crea ciclos de animaciones con ruido y exporta GIF en una sola línea de código.  Creada por:
+            <a href="https://www.piratesjustar.com/"
+              target="_blank">Peter Hayman</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Smilebags/p5.dimensions.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.dimensions.jpg">
+              <h3>p5.dimensions</h3>
+            </a>
+          </div>
+          <p>p5.dimensions extiende las funciones de vector de p5.js para que funcione con cualquier número de dimensiones. Creada por:
+            <a href="https://github.com/Smilebags"
+              target="_blank">Smilebags</a>, <a href="https://github.com/max0410"
+              target="_blank">Max Segal</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/freshfork/p5.EasyCam" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.EasyCam.jpg">
+              <h3>p5.EasyCam</h3>
+            </a>
+          </div>
+          <p>Control de cámara 3D simple con desplazamiento, zoom y rotación inerciales. Contribuciones importantes por Thomas Diewald. Creada por:
+            <a href="https://jwilliamdunn.com"
+              target="_blank">jWilliam Dunn</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/loneboarder/p5.experience.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.experience.jpg">
+              <h3>p5.experience</h3>
+            </a>
+          </div>
+          <p>Biblioteca extensa para p5.js que agrega eventos adicionales para crear aplicaciones web basadas en el canvas.  Creada por:
+            <a href="https://github.com/loneboarder"
+              target="_blank">Felix Meichelböck</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/machineagency/p5.fab" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.fab.jpg">
+              <h3>p5.fab</h3>
+            </a>
+          </div>
+          <p>p5.fab controla la maquina de fabricación digital desde p5.js. Creada por:
+            <a href="https://blairsubbaraman.com/"
+              target="_blank">Blair Subbaraman</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/davepagurek/p5.filterRenderer" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.filterRenderer.jpg">
+              <h3>p5.filterRenderer</h3>
+            </a>
+          </div>
+          <p>A library for p5.js WebGL mode to draw with depth blur and shadows. Creada por:
+            <a href="https://www.davepagurek.com/"
+              target="_blank">Dave Pagurek</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://idmnyu.github.io/p5.js-func" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.func.jpg">
+              <h3>p5.func</h3>
+            </a>
+          </div>
+          <p>p5.func es una extensión de p5 que provee nuevos objetos y utilidades para generación de funciones en los dominios de tiempo, frecuencia y espacio. Creada por:
+            <a href="https://lukedubois.com/"
+              target="_blank">R. Luke DuBois</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bmoren/p5.geolocation" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.geolocation.jpg">
+              <h3>p5.geolocation</h3>
+            </a>
+          </div>
+          <p>p5.geolocation provee técnicas para adquirir, observar, calcular y georeferenciar ubicaciones de usuario para p5.js. Creada por:
+            <a href="https://www.benmoren.com/"
+              target="_blank">Ben Moren</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://charlie-roberts.com/gibber/p5-gibber/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.gibber.jpg">
+              <h3>p5.gibber</h3>
+            </a>
+          </div>
+          <p>p5.gibber provee capacidades de secuenciamiento de música y de síntesis de audio. Creada por:
+            <a href="https://charlie-roberts.com"
+              target="_blank">Charlie Roberts</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://p5.glitch.me/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.glitch.jpg">
+              <h3>p5.glitch</h3>
+            </a>
+          </div>
+          <p>p5.glitch extiende p5.js para imagenes de glitch y archivos binarios. Creada por:
+            <a href="https://teddavis.org"
+              target="_blank">Ted Davis</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Buggem/processing.input/blob/main/p5.input.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.input.jpg">
+              <h3>p5.input</h3>
+            </a>
+          </div>
+          <p>Añade más soporte clave para p5.js. Creada por:
+            <a href="https://github.com/Buggem/"
+              target="_blank">Max Parry</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bitcraftlab/p5.gui" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.gui.jpg">
+              <h3>p5.gui</h3>
+            </a>
+          </div>
+          <p>p5.gui genera una interfaz gráfica de usuario para tus bosquejos p5. Creada por:
+            <a href="https://www.bitcraftlab.com/"
+              target="_blank">Martin Schneider</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/monteslu/p5.j5" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.j5.jpg">
+              <h3>p5.j5</h3>
+            </a>
+          </div>
+          <p>La completa Johnny-Five.io Nodebots / robótica para Arduino y otros microcontroladores diseñados para funcionar directamente en el navegador web con WebSerial o WebUSB. Creada por:
+            <a href="https://twitter.com/monteslu"
+              target="_blank">Luis Montes</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://microsoft.github.io/jacdac-docs/clients/javascript/p5js/ " target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.jacdac.jpg">
+              <h3>p5.jacdac</h3>
+            </a>
+          </div>
+          <p>Plug-and-play micro-controladores para p5js. Creada por:
+            <a href="https://twitter.com/pelikhan"
+              target="_blank">Jonathan de Halleux</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Vamoss/p5.joystick" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.joystick.jpg">
+              <h3>p5.joystick</h3>
+            </a>
+          </div>
+          <p>Conéctate y juega con joysticks físicos. Creada por:
+            <a href="https://vamoss.com.br"
+              target="_blank">Vamoss</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bmoren/p5.localmessage" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.localmessage.jpg">
+              <h3>p5.localmessage</h3>
+            </a>
+          </div>
+          <p>p5.provee una interfaz simple para enviar mensajes locales de un bosquejo a otro y así dibujar en múltiples ventanas! Creada por:
+            <a href="https://benmoren.com"
+              target="_blank">Ben Moren</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jdeboi/p5.mapper" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.mapper.jpg">
+              <h3>p5.mapper</h3>
+            </a>
+          </div>
+          <p>p5.mapper es una libreria de mapeo de proyección para p5.js. Esta libreria hace facil programar y proyectar bocetos interactivos y algorítmicos. Creada por:
+            <a href="https://jdeboi.com/"
+              target="_blank">Jenna deBoisblanc</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://editor.p5js.org/bharathsatheesan7a/sketches/NHvinWyye" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.math.js.jpg">
+              <h3>p5.math.js</h3>
+            </a>
+          </div>
+          <p>Las operaciones matemáticas de JavaScript han sido convertidas a simple lenguaje humano, así que ellos podrán entenderlas realmente rápido. Creada por:
+            <a href="https://github.com/bharathsatheesan"
+              target="_blank">Bharath Satheesan</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bobcgausa/cook-js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.particle.jpg">
+              <h3>p5.particle</h3>
+            </a>
+          </div>
+          <p>Los objetos Particle y Fountain pueden ser usados para crear efectos controlados por datos que son definidos a través de estructuras de usuario o entrada JSON y funciones de usuario para dibujar. Creada por:
+            <a href="http://professorcook.org/"
+              target="_blank">Robert Cook</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jbakse/p5.party" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.party.jpg">
+              <h3>p5.party</h3>
+            </a>
+          </div>
+          <p>p5.party es una librería para la facil creación de juegos multiusuario  conectados en red, aplicaciones y bocetos. Creada por:
+            <a href="http://justinbakse.com"
+              target="_blank">Justin Bakse</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/antiboredom/p5.patgrad" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.PatGrad.jpg">
+              <h3>p5.PatGrad</h3>
+            </a>
+          </div>
+          <p>p5.PatGrad te permite agregar patrones y gradiantes a tus bocetos. Creada por:
+            <a href="https://lav.io"
+              target="_blank">Sam Lavigne</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/SYM380/p5.pattern" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.pattern.jpg">
+              <h3>p5.pattern</h3>
+            </a>
+          </div>
+          <p>Una libreria de patrones de dibujo para p5.js. Creada por:
+            <a href="https://twitter.com/hyappy717"
+              target="_blank">Taichi Sayama</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/liz-peng/p5.Polar" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.Polar.jpg">
+              <h3>p5.Polar</h3>
+            </a>
+          </div>
+          <p>p5.Polar provee abstracciones matematicas haciendo más facil crear hermosos, calidoscópicos, patrones radiales. Creada por:
+            <a href="https://github.com/liz-peng"
+              target="_blank">Liz Peng</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://osresearch.github.io/p5.projection/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.projection.jpg">
+              <h3>p5.projection</h3>
+            </a>
+          </div>
+          <p>Facil mapeado de proyección de bocetos en superficies del mundo real. Creada por:
+            <a href="https://trmm.net/"
+              target="_blank">Trammell Hudson</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://objetos.github.io/p5.quadrille.js/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.quadrille.js.jpg">
+              <h3>p5.quadrille.js</h3>
+            </a>
+          </div>
+          <p>librería p5.js quadrille. Creada por:
+            <a href="https://github.com/nakednous"
+              target="_blank">Jean Pierre Charalambos</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/doriclaudino/p5.recorder" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.recorder.jpg">
+              <h3>p5.recorder</h3>
+            </a>
+          </div>
+          <p>Graba el canvas del boceto y audio. Creada por:
+            <a href="https://github.com/doriclaudino"
+              target="_blank">Dori Claudino</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://antiboredom.github.io/p5.riso" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.Riso.jpg">
+              <h3>p5.Riso</h3>
+            </a>
+          </div>
+          <p>p5.Riso.js es una biblioteca para impresión de Risograph. Creada por:
+            <a href="https://lav.io/"
+              target="_blank">Sam Lavigne</a>, <a href="https://tegabrain.com/"
+              target="_blank">Tega Brain</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/mveteanu/p5.SceneManager" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.scenemanager.jpg">
+              <h3>p5.scenemanager</h3>
+            </a>
+          </div>
+          <p>p5.SceneManager te ayuda a crear bosquejos con múltiples estados / escenas. Cada escena es como un bosquejo dentro del bosquejo principal. Creada por:
+            <a href="https://github.com/mveteanu/"
+              target="_blank">Marian Veteanu</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bohnacker/p5js-screenPosition" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.screenPosition.jpg">
+              <h3>p5.screenPosition</h3>
+            </a>
+          </div>
+          <p>Agrega las variables screenX and screenY con las cordenadas del cursor en la pantalla. Creada por:
+            <a href="https://hartmut-bohnacker.de/"
+              target="_blank">Hartmut Bohnacker</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/generative-light/p5.scribble.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.scribble.jpg">
+              <h3>p5.scribble</h3>
+            </a>
+          </div>
+          <p>Dibujar primitivas 2D con una apariencia poco acabada. Creada por Janneck Wullschleger, basada en un puerto de la biblioteca original de Processing. Creada por:
+            <a href="https://github.com/gicentre/handy"
+              target="_blank">handy</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/vanevery/p5.serialport" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.serialport.jpg">
+              <h3>p5.serialport</h3>
+            </a>
+          </div>
+          <p>p5.serial habilita la comunicación serial entre dispositivos que soporten  serial (RS-232) y a los bocetos p5 correr en el navegador. Creada por:
+            <a href="https://www.walking-productions.com/notslop/abou/"
+              target="_blank">Shawn Van Every</a>, <a href="https://kaganjd.github.io/portfolio/"
+              target="_blank">Jen Kagan</a>, <a href="https://tigoe.net/"
+              target="_blank">Tom Igoe</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/gaba5/p5.shape.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.shape.js.jpg">
+              <h3>p5.shape.js</h3>
+            </a>
+          </div>
+          <p>Una biblioteca creada para agregar formas más simples al marco p5.js. Creada por:
+            <a href="https://github.com/gaba5"
+              target="_blank">Sebastien Lorentz</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/GarrettMFlynn/p5.js-slides" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/P5.slides.jpg">
+              <h3>P5.slides</h3>
+            </a>
+          </div>
+          <p>p5.slide es una plataforma de presentaciones escrito en p5.js. Creada por:
+            <a href="http://garrettflynn.com/"
+              target="_blank">Garrett Flynn</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://idmnyu.github.io/p5.js-speech/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.speech.jpg">
+              <h3>p5.speech</h3>
+            </a>
+          </div>
+          <p>p5.speech provee acceso simple y claro a las APIs de Habla Web y Detección de Habla, permitiendo la creación de bosquejos sencillos que pueden hablar y escuchar. Creada por:
+            <a href="https://lukedubois.com/"
+              target="_blank">R. Luke DuBois</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/eltapir/p5.start2d.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.start2d.js.jpg">
+              <h3>p5.start2d.js</h3>
+            </a>
+          </div>
+          <p>Extensión para p5 para crear gráficos 2D estáticos usnado px, mm, cm o pulgadas. Creada por:
+            <a href="https://github.com/eltapir"
+              target="_blank">Kris HEYSE</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/two-ticks/p5.teach.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.teach.jpg">
+              <h3>p5.teach</h3>
+            </a>
+          </div>
+          <p>Una libreria de animación matematica para p5.js, amigable para novatos. Creada con la tutoría de Nick McIntyre and Jithin KS. Creada por:
+            <a href="https://www.linkedin.com/in/aditya-siddheshwar/"
+              target="_blank">Aditya Siddheshwar</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/linux-man/p5.tiledmap" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.tiledmap.jpg">
+              <h3>p5.tiledmap</h3>
+            </a>
+          </div>
+          <p>p5.tilemap provee funciones de dibujo y de ayuda para incluir mapas en  tus bocetos. Creada por:
+            <a href="https://softlab.pt/"
+              target="_blank">Caldas Lopes</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/scottkildall/p5.timer" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.timer.jpg">
+              <h3>p5.timer</h3>
+            </a>
+          </div>
+          <p>Este libreria ejecuta funciones de cronometraje asincronas como cuentas atrás, temporizadores de un solo disparo, el % del tiempo transcurrido y encapsula la función millis() y otras cálculos relacionados que frecuentemente obstruyen tu código. Creada por:
+            <a href="https://www.kildall.com"
+              target="_blank">Scott Kildall</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/L05/p5.touchgui" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.touchgui.jpg">
+              <h3>p5.touchgui</h3>
+            </a>
+          </div>
+          <p>Una biblioteca de interfaz gráfica de usuario (GUI) multi-tacto y para el ratón. Creada por:
+            <a href="https://L05.is"
+              target="_blank">Carlos L05 Garcia</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Milchreis/p5.tween" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.tween.jpg">
+              <h3>p5.tween</h3>
+            </a>
+          </div>
+          <p>Con p5.tween puede crear facilmente animaciones como interpolación para tus objetos y formas. Creada por:
+            <a href="https://github.com/Milchreis"
+              target="_blank">Nick Müller</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/alptugan/p5.utils" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.utils.jpg">
+              <h3>p5.utils</h3>
+            </a>
+          </div>
+          <p>A set of utilities and additional features for my creative coding class aiming  to help students. Creada por:
+            <a href="https://www.alptugan.com"
+              target="_blank">ALP TUĞAN</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/calebfoss/p5.videorecorder" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.videorecorder.jpg">
+              <h3>p5.videorecorder</h3>
+            </a>
+          </div>
+          <p>Graba tu canvas como un archivo de video con audio. Creada por:
+            <a href="https://www.calebfoss.com/"
+              target="_blank">Caleb Foss</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Dozed12/p5.voronoi" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.voronoi.jpg">
+              <h3>p5.voronoi</h3>
+            </a>
+          </div>
+          <p>p5.voronoi brinda un conjunto de herramientas para dibujar y utilizar diagramas voronoi en tus bosquejos de p5.js. Creada por:
+            <a href="https://github.com/Dozed12"
+              target="_blank">Francisco Moreira</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/limzykenneth/p5.wasm" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.wasm.jpg">
+              <h3>p5.wasm</h3>
+            </a>
+          </div>
+          <p>p5.wasm es una libreria complemento escrita en Rust y compilada para WebAssembly que implementa funciones comunes encontradas en p5.js. Creada por:
+            <a href="https://github.com/limzykenneth"
+              target="_blank">Kenneth Lim</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/ars2062/p5-wasm" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.wasm.core.jpg">
+              <h3>p5.wasm.core</h3>
+            </a>
+          </div>
+          <p>Un nucleo de web assembly para p5.js. Creada por:
+            <a href="https://github.com/ars2062"
+              target="_blank">Arshia Moghaddam</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/gohai/p5.webserial/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.webserial.jpg">
+              <h3>p5.webserial</h3>
+            </a>
+          </div>
+          <p>Una libreria para interactuar con dispositivos seriales desde dentro del navegador, basado en la API de Web Serial (disponible en Chrome y Edge). Creada por:
+            <a href="https://github.com/gohai/"
+              target="_blank">Gottfried Haider</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/ongzzzzzz/p5.web-serial" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.web-serial.jpg">
+              <h3>p5.web-serial</h3>
+            </a>
+          </div>
+          <p>Una libreria de p5js para usar la API de Web Serial para acceder a dispositivos como Arduino, configuración no requerida. Creada por:
+            <a href="https://ongzz.ml"
+              target="_blank">Ong Zhi Zheng</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://p5xr.org/#/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/p5.xr.jpg">
+              <h3>p5.xr</h3>
+            </a>
+          </div>
+          <p>Una biblioteca para crear bocetos VR y AR con p5. Creada por:
+            <a href="https://www.stalgiagrigg.name/"
+              target="_blank">Stalgia Grigg</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/phywand/pdl-library/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/pdl.library.jpg">
+              <h3>pdl.library</h3>
+            </a>
+          </div>
+          <p>Un conjunto de funciones y clases para crear diagramas interactivos para  enseñar y aprender fisica. Creada por:
+            <a href="https://slowthinkingphysics.net"
+              target="_blank">Ian Lawrence</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Gherciu/react-p5" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/react-p5.jpg">
+              <h3>react-p5</h3>
+            </a>
+          </div>
+          <p>Esta libreria te permite integrar bocetos de p5 dentro de tu aplicación de React. Creada por:
+            <a href="https://gherciu.github.io/"
+              target="_blank">Gherciu Gheorghe</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://rednoise.org/rita" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/rita.js.jpg">
+              <h3>rita.js</h3>
+            </a>
+          </div>
+          <p>RiTa.js provee un conjunto de objetos de procesamiento de lenguaje natural para literatura generativa. Creada por:
+            <a href="https://rednoise.org/daniel"
+              target="_blank">Daniel C. Howe</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://codeforartists.com/RotatingKnobMaker" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/Rotating_knobs.jpg">
+              <h3>Rotating knobs</h3>
+            </a>
+          </div>
+          <p>Hacer perillas se puede girar con gráficos personalizados y volver rangos de valores Creada por:
+            <a href="https://codeforartists.com"
+              target="_blank">Miles DeCoster</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/pfe1223/Shape5js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/Shape5.jpg">
+              <h3>Shape5</h3>
+            </a>
+          </div>
+          <p>Shape5 es una libreria primitiva de graficos 2D para estudiante de primaria quienes estan aprendiendo a programar por primera vez. Creada por:
+            <a href="https://github.com/pfe1223"
+              target="_blank">Patrick Ester</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/makeyourownalgorithmicart/simple.js/wiki" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/simple.js.jpg">
+              <h3>simple.js</h3>
+            </a>
+          </div>
+          <p>Funciones de ayuda y valores predeterminados para nuevos y jovenes programadores. Creada por:
+            <a href="https://github.com/makeyourownalgorithmicart/simple.js/wiki"
+              target="_blank">Tariq Rashid</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/andrewtacon/p5.tiledplay.js" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/TiledPlay.jpg">
+              <h3>TiledPlay</h3>
+            </a>
+          </div>
+          <p>Un libreria pequeña para conectar la funcionalidad de p5.js, p5.play, y p5.tiled.js para facilmente crear juegos de plataformas 2d utilizando JavaScript. Creada por:
+            <a href="https://github.com/andrewtacon"
+              target="_blank">Andrew Tacon</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://www.tramontana.xyz" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/tramontana.jpg">
+              <h3>tramontana</h3>
+            </a>
+          </div>
+          <p>Tramontana es una platforma para utilizar múltiples dispositos (iOS, Android, tramontana Board, ...) para crear ambientes interactivos o prototipar experiencias a escala. Creada por:
+            <a href="https://www.pierdr.com"
+              target="_blank">Pierluigi Dalla Rosa</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/CodeGuppyPrograms/TurtleGFX" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/TurtleGFX.jpg">
+              <h3>TurtleGFX</h3>
+            </a>
+          </div>
+          <p>TurtleGFX permite codificar con Turtle Graphics en JavaScript. Excelente para la educación y la codificación creativa. Creada por:
+            <a href="https://codeguppy.com"
+              target="_blank">CodeGuppy</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://tetoki.eu/vida" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/vida.jpg">
+              <h3>vida</h3>
+            </a>
+          </div>
+          <p>Vida es una biblioteca simple que agrega detección de movimiento utilizando la camara y la función de seguimiento blob a p5js. Creada por:
+            <a href="https://paweljanicki.jp"
+              target="_blank">Pawel Janicki</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://webmidijs.org/" target="_blank">
+              <img alt="" src="../../../assets/img/libraries/WEBMIDI.js.jpg">
+              <h3>WEBMIDI.js</h3>
+            </a>
+          </div>
+          <p>Envia y recibe facilmente mensaje MIDI de p5. Creada por:
+            <a href="https://djip.co"
+              target="_blank">Jean-Philippe Côté</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+        
+
+
+    </main>
+    
+    <footer>
+        <h2 class="sr-only">Créditos</h2>
+        <ul id="footer-menu-socials" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Foro</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+    
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="/es/">Inicio</a></li>
+          <li><a href="https://editor.p5js.org">Editor</a></li>
+          <li><a href="/es/download/">Descargar</a></li>
+          <li><a href="/es/download/support.html">Donar</a></li>
+          <li><a href="/es/get-started/">Empezar</a></li>
+          <li><a href="/es/reference/">Referencia</a></li>
+          <li><a href="/es/libraries/">Bibliotecas</a></li>
+          <li><a href="/es/learn/">Aprender</a></li>
+          <li><a href="/es/teach/">Enseñar</a></li>
+          <li><a href="/es/examples/">Ejemplos</a></li>
+          <li><a href="https://p5js.org/contributor-docs/#/">Contribuir</a></li>
+          <li><a href="/es/books/">Libros</a></li>
+          <li><a href="/es/community/">Comunidad</a></li>
+          <li><a href="https://showcase.p5js.org">Showcase</a></li>
+        </ul>  
+        
+        <p>
+            p5.js está actualmente dirigido por <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> y fue creado por <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js es desarrollado por una comunidad de colaboradores, con el apoyo de <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> y <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identidad y diseño gráfico por <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/es/copyright.html">&copy; Info</a>.
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/es/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","es","hi","ko","zh-Hans"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

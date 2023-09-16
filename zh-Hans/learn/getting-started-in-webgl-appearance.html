@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">learn | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=618ad0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../../assets/img/favicon.ico">
+
+
+    <script src="/../../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+    <script src="/../../../assets/js/vendor/pangu.min.js"></script>
+
+  </head>
+  <body>
+
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">语言设定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/zh-Hans/">
+          <img src="/../../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<style>
+  .methodsList {
+    font-family: monospace;
+  }
+
+  .additionalInformation {
+    width: 100%;
+    background-color: #dedeff;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc {
+    width: 100%;
+    background-color: #eee;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc h3 {
+    margin-top: 15px;
+  }
+
+  .indexList {
+    padding: 15px;
+    background-color: whitesmoke;
+  }
+</style>
+
+<div id="learn-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">网站导航</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/zh-Hans/">主页</a></li>
+        <li><a href="https://editor.p5js.org">编辑器</a></li>
+        <li><a href="/zh-Hans/download/">下载</a></li>
+        <li><a href="/zh-Hans/download/support.html">捐赠</a></li>
+        <li><a href="/zh-Hans/get-started/">入门</a></li>
+        <li><a href="/zh-Hans/reference/">参考文献</a></li>
+        <li><a href="/zh-Hans/libraries/">程式库</a></li>
+        <li><a href="/zh-Hans/learn/">学习</a></li>
+        <li><a href="/zh-Hans/teach/">教学</a></li>
+        <li><a href="/zh-Hans/examples/">范例</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">贡献</a></li>
+        <li><a href="/zh-Hans/books/">书籍</a></li>
+        <li><a href="/zh-Hans/community/">社群</a></li>
+        <li><a href="https://showcase.p5js.org">案例展示</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main>
+      <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+
+      <h1>样式和外观</h1>
+
+      <p>
+        创作 3D 作品不仅仅是关于几何形状。相机、灯光和材质是创建视觉上有趣的 3D 场景的重要组成部分。p5.js 提供了许多工具，使我们可以改变我们几何形状的外观。
+      </p>
+
+      <div class="toc">
+        <h3>目录</h3>
+        <ol>
+          <li><a href="#camera">相机和视图</a></li>
+          <li><a href="#lighting">照明</a></li>
+          <li><a href="#materials">材料和纹理</a></li>          
+          <li><a href="#conclusion">结论</a></li>          
+          <li><a href="#glossary">词汇表</a></li>          
+        </ol>
+      </div>
+
+      <h2 id="camera">相机和视图</h2>
+
+      <p>相机是 3D 场景的基本组成部分；它为我们提供 3D 所特有的空间和维度感。 在 p5.js 中，WebGL 模式默认提供透视相机，但我们可以使用 <a class="code" href="{{root}}/reference/#/p5/perspective">perspective()</a> 或  <a class="code" href="{{root}}/reference/#/p5/ortho">ortho()</a>  来更改这一点。 <a class="code" href="/zh-Hans/reference/#/p5/perspective">perspective()</a> 或  <a
+      class="code" href="/zh-Hans/reference/#/p5/ortho">ortho()</a>.</p>
+
+      <img style="padding:60px;" src='../../../assets/learn/basic3d/images/cameraTypeIllustration.png'
+        alt="an illustration showing the difference between perspective and orthographic camera types">
+
+      <p>透视相机会使对象倾斜，因此它们随着远离视角点的距离而变小，在远处消失。 这与正交相机形成对比，后者的几何形状随着距离增加而保持相同大小，并且没有消失点。</p>
+
+      <iframe src="../../../assets/learn/basic3d/cameraExample.html" width="720" height="350">
+      </iframe>
+
+      <p>我们可以使用透视相机更改的一个设置是视场（FOV）。这是用来描述我们相机看到的角度。 在简单的示例中，它可能会产生缩放效果，但它将改变形状在远处改变大小的方式。</p>
+
+      <p>在 3D 中使用相机时，另一个重要的术语是相机的视锥体<em>frustum</em>。 相机的视锥体是相机视图的形状，一个金字塔形状，其中可以显示几何形状。视锥体包括<em>近平面和远平面</em>。 近平面定义了几何形状与相机之间必须呈现的最小距离。远平面定义了几何形状与相机之间可以呈现的最大距离。 每个平面都可以更改，以影响相机可以看到多近和多远。有时将这种有选择地包含几何形状的过程称为“裁剪”。</p>
+
+      <div style="display:flex; align-items:center; justify-content: center;">
+      <img style="width:50%;" src='../../../assets/learn/basic3d/images/frustum_example.png'
+        alt="an illustration showing the the camera frustum in purple, the near plane represented by a 
+        yellow rectangle near the camera, and far plane as a green rectangle on the opposite end of the frustum volume.">
+      </div>
+
+      <p>相机可以通过向 <a class="code">camera()</a> 传递参数来移动， 但在代码中不断移动和调整相机可能会很繁琐，特别是当你在尝试各种想法时。 p5.js 有一个特殊的相机方法 <a class="code" href="{{root}}/reference/#/p5/orbitControl">orbitControl()</a>，可以使用鼠标缩放、平移和定位相机。<a class="code"
+      href="/zh-Hans/reference/#/p5/orbitControl">orbitControl()</a>可以使用鼠标缩放、平移和定位相机。</p>
+
+      <p>一个场景可以有多个相机，但一次只能有一个相机处于活动状态。 在 p5.js 中，草图默认只有一个透视相机，但可以通过调用 <a class="code">perspective()</a>（使用新参数）或 <a class="code">ortho()</a> 来更改相机类型。 <a class="code">camera()</a> 可以用于更改活动相机的位置和相机所看向的位置。在下面的草图中试试吧。</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.7.0">
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  debugMode()
+  // uncomment to change the perspective camera to orthographic
+  // ortho();
+
+  // setting initial camera position
+  camera(200,-40, 200);
+
+  describe('a 3d scene with a sphere on the bottom and box on the top');
+}
+
+function draw() {
+  background(220);
+  
+  let sphere_x = 0;
+  let sphere_y = 90;
+  let sphere_z = 0;
+  
+  let box_x = 0;
+  let box_y = -90;
+  let box_z = 0;
+  
+  // uncomment to point camera at sphere
+  // camera(
+  //   400,-40, 400, // camera position
+  //   sphere_x, sphere_y, sphere_z // position to look at
+  // );
+  
+  // uncomment to point camera at box
+  // camera(
+  //   400,-40, 400, // camera position
+  //   box_x, box_y, box_z // position to look at
+  // );
+  
+  push();
+  translate(sphere_x, sphere_y, sphere_z);
+  sphere(40,8);
+  pop();
+  
+  push();
+  translate(box_x, box_y, box_z);
+  box();
+  pop();
+}
+      </script>
+
+      <h2 id="lighting">照明</h2>
+
+      <p>照明是 3D 场景中的另一个重要组成部分。为了能够传达形状和深度，必须拥有光源。p5.js 中有一些不同类型的光源可供草图使用。</p>
+
+      <dl>
+        <dt><a class="code" href="/zh-Hans/reference/#/p5/ambientLight">ambientLight()</a></dt>
+        <dd>在场景中使用环境光会使得所有物体都显示得更亮，不考虑光源的位置或方向。</dd>
+        <dt><a class="code" href="/zh-Hans/reference/#/p5/directionalLight">directionalLight()</a></dt>
+        <dd>方向光从一个方向照射，这对于传达场景的深度或需要一个“太阳”光源时特别有用。该方法接受颜色和方向参数。</dd>
+        <dt><a class="code" href="/zh-Hans/reference/#/p5/pointLight">pointLight()</a></dt>
+        <dd>点光源从一个点向所有方向发射光线，类似于灯泡。该方法接受颜色和光源位置参数。</dd>
+        <dt><a class="code" href="/zh-Hans/reference/#/p5/spotLight">spotLight()</a></dt>
+        <dd>聚光灯从一个点向一个方向发射光线。该灯光发射成锥形，其半径和浓度可以调节。</dd>
+        <dt><a class="code" href="/zh-Hans/reference/#/p5/noLights">noLights()</a></dt>
+        <dd>`noLights()` 函数可以使所有后续几何体呈现出无光照状态。当你想要平坦、未着色的几何体时，这很有用</dd>
+      </dl>
+
+      <p>
+        这些灯光应该在<a class="code">draw()</a>函数中使用。在一个场景中可以同时使用最多5个灯光， 从而使您能够组合具有多样化和复杂光源的场景。尝试勾选和取消下面交互示例中的复选框， 看看灯光如何混合在一起。对于每个活动光源，都有其位置或方向的视觉指示器，但这些仅用于说明目的！
+      </p>
+
+      <iframe src="../../../assets/learn/basic3d/lightingExample.html" width="720" height="350">
+      </iframe>
+
+      <p>在这个例子中，尝试注释或取消注释每个光源，并尝试调整它们的参数。</p>
+
+      <br />
+
+      <script type="text/p5" data-autoplay data-p5-version="1.7.0">
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  camera(100,-80, 100);
+  describe('a box geometry with a number of lights affecting its appearance');
+}
+
+function draw() {
+  background(220);
+  
+  orbitControl();
+  
+  // use comments to enable / disable lights
+  
+  ambientLight(20);
+  
+  pointLight(
+    255, 0, 0, // color
+    40, -40,0  // position
+  );
+  
+  directionalLight(
+    0,255,0, // color
+    1, 1, 0  // direction
+  );
+  
+  let locX = mouseX - width / 2;
+  let locY = mouseY - height / 2;
+  spotLight(
+    0, 0, 255,       // color
+    locX, locY, 100, // position
+    0, 0, -1,        // direction
+    40               // radius of the spotlight cone
+  );
+  
+  // noLights();
+  
+  box();
+}
+      </script>
+
+      <h2 id="materials">材料和纹理</h2>
+      <p>物体的外观可以根据它们的材料而异。材料决定光如何与几何图形相互作用，以及如何将颜色（或纹理）应用于物体。材料可以各不相同， 使物体闪亮、粗糙，甚至贴上图像纹理。</p>
+
+      <ul>
+        <li><a class="code" href="/zh-Hans/reference/#/p5/normalMaterial">normalMaterial()</a></li>
+        <li><a class="code" href="/zh-Hans/reference/#/p5/ambientMaterial">ambientMaterial()</a></li>
+        <li><a class="code" href="/zh-Hans/reference/#/p5/emissiveMaterial">emissiveMaterial()</a></li>
+        <li><a class="code" href="/zh-Hans/reference/#/p5/specularMaterial">specularMaterial()</a></li>
+      </ul>
+
+      <p>在这个交互式示例中，尝试选择每种不同的材料，看看它们对几何图形外观的影响。您可以移动鼠标，看看定向光对材料的影响。</p>
+
+      <iframe src="../../../assets/learn/basic3d/materialsExample.html" width="720" height="350">
+      </iframe>
+
+      <p>尝试在这个示例中注释或取消注释不同的光源：</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.7.0">
+function setup() {
+  createCanvas(innerWidth, innerHeight, WEBGL);
+  describe('a sphere geometry with multiple materials applied to it');
+}
+
+function draw() {
+  background(220);
+  camera(200, -200, 200);
+  
+  noStroke();
+
+  ambientLight(128);
+  let locX = mouseX - width / 2;
+  let locY = mouseY - height / 2;
+  pointLight(255, 255, 255, locX, locY, 100);
+
+  // normal material shows the geometry normals
+  normalMaterial();
+
+  // ambient materials reflect under any light
+  ambientMaterial(255, 0, 0);
+
+  // emissive materials show the same color regardless of light
+  emissiveMaterial(0, 255, 0);
+
+  // specular materials reflect the color of the light source 
+  // and can vary in 'shininess'
+  shininess(10);
+  specularMaterial(0, 0, 255);
+
+  // box(50);
+  sphere();
+}
+      </script>
+
+      <p>通过使用<a class="code">texture()</a>可以实现更多自定义材料。简而言之，这些是可以映射到几何图形表面的图像。 这些纹理可以从图像中导入，甚至可以使用着色器在代码中生成。 要将纹理映射到几何图形上，请在preload()中使用 <a class="code">loadImage()</a>，然后在绘制形状之前调用<a class="code">texture()</a>。</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.7.0">
+let myTexture;
+
+function preload() {
+  myTexture = loadImage("../../../assets/learn/basic3d/images/simpleTexture.png");
+  // map textures between 0 and 1 to match geometry uvs
+  textureMode(NORMAL);
+}
+
+function setup() {
+  createCanvas(innerWidth, innerHeight, WEBGL);
+  describe('a rotating box with a texture of a pink scribble mapped onto it');
+}
+
+function draw() {
+  background(220);
+  
+  // apply the texture to the box
+  texture(myTexture);
+  
+  push();
+  rotateX(millis()/1000);
+  rotateY(millis()/700);
+  box();
+  pop();
+}
+      </script>
+
+
+      <div class="additionalInformation">
+        <p> 
+          尽管着色器可以用于改变几何体的外观，但在本教程范围之外。因此，请确保在准备好时查看 <a href="{{root}}/learn/introduction-to-shaders.html">着色器简介</a>页面。 <a href="/zh-Hans/learn/getting-started-in-webgl-shaders.html">着色器简介</a> 页面准备就绪时
+        </p>
+      </div>
+
+      <h2 id="conclusion">结论</h2>
+
+      <p>能够控制相机、灯光和材料将使你更有弹性地决定你的草图外观， 这将为你的 3D 草图引入自己的风格打开可能性。在"开始使用 WebGL"系列的以下教程中， 我们将向您介绍着色器，这将使您能够以更有趣的方式改变草图的外观。</p>
+
+      <h3>其他教程</h3>
+      <p>这个教程是关于使用 p5.js 中 WebGL 基础的系列之一。以下是其他教程： </p>
+      <ul class="indexList">
+        <li><a href="/zh-Hans/learn/getting-started-in-webgl-coords-and-transform.html">坐标和变换</a></li>
+        <li><a href="/zh-Hans/learn/getting-started-in-webgl-custom-geometry.html">在 WebGL 中创建自定义几何图形</a></li>
+        <li>样式和外观 （你现在处于这里）</li>
+        <li><a href="/zh-Hans/learn/getting-started-in-webgl-shaders.html">入门 Shaders</a></li>
+      </ul>
+
+      <h2 id="glossary">词汇表</h2>
+
+      <h3>相机</h3>
+      <p>3D 场景的视点。</p>
+
+      <h3>透视</h3>
+      <p>通过使远处的物体变小来给出深度感的投影方式。</p>
+
+      <h3>正交</h3>
+      <p>正交的投影方式不受深度影响，给出二维外观。</p>
+
+      <h3>视野</h3>
+      <p>表示相机可视范围的角度。</p>
+
+      <h3>锥体</h3>
+      <p>表示相机完整可视区域的几何形状。</p>
+
+      <h3>近和远平面</h3>
+      <p>近平面表示几何体必须距相机的最小距离才能被显示，而远平面则表示最大距离。</p>
+
+      <h3>裁剪</h3>
+      <p>有选择地显示某些几何体而不是其他几何体，例如当几何体超出相机锥体范围时。</p>
+
+    </main>
+
+    
+    <footer>
+        <h2 class="sr-only">归功于</h2>
+        <ul id="footer-menu-socials" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">论坛</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+    
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="/zh-Hans/">主页</a></li>
+          <li><a href="https://editor.p5js.org">编辑器</a></li>
+          <li><a href="/zh-Hans/download/">下载</a></li>
+          <li><a href="/zh-Hans/download/support.html">捐赠</a></li>
+          <li><a href="/zh-Hans/get-started/">入门</a></li>
+          <li><a href="/zh-Hans/reference/">参考文献</a></li>
+          <li><a href="/zh-Hans/libraries/">程式库</a></li>
+          <li><a href="/zh-Hans/learn/">学习</a></li>
+          <li><a href="/zh-Hans/teach/">教学</a></li>
+          <li><a href="/zh-Hans/examples/">范例</a></li>
+          <li><a href="https://p5js.org/contributor-docs/#/">贡献</a></li>
+          <li><a href="/zh-Hans/books/">书籍</a></li>
+          <li><a href="/zh-Hans/community/">社群</a></li>
+          <li><a href="https://showcase.p5js.org">案例展示</a></li>
+        </ul>  
+        
+        <p>
+            p5.js 目前由<a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a>领导，原创者为<a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>。p5.js 是在<a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a>和<a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>的支持下由其合作社群所开发。形象及平面设计<a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>。<a href="/zh-Hans/copyright.html">&copy; 版权信息</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/zh-Hans/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","es","hi","ko","zh-Hans"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

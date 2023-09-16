@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">teach | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=618ad0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../../assets/img/favicon.ico">
+
+
+    <script src="/../../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+    <script src="/../../../assets/js/vendor/pangu.min.js"></script>
+
+  </head>
+  <body>
+
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">语言设定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/zh-Hans/">
+          <img src="/../../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<div id="teach-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">网站导航</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/zh-Hans/">主页</a></li>
+        <li><a href="https://editor.p5js.org">编辑器</a></li>
+        <li><a href="/zh-Hans/download/">下载</a></li>
+        <li><a href="/zh-Hans/download/support.html">捐赠</a></li>
+        <li><a href="/zh-Hans/get-started/">入门</a></li>
+        <li><a href="/zh-Hans/reference/">参考文献</a></li>
+        <li><a href="/zh-Hans/libraries/">程式库</a></li>
+        <li><a href="/zh-Hans/learn/">学习</a></li>
+        <li><a href="/zh-Hans/teach/">教学</a></li>
+        <li><a href="/zh-Hans/examples/">范例</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">贡献</a></li>
+        <li><a href="/zh-Hans/books/">书籍</a></li>
+        <li><a href="/zh-Hans/community/">社群</a></li>
+        <li><a href="https://showcase.p5js.org">案例展示</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+ <main id="content" class="column-span">
+  	<section class= "teach-intro">
+      <h1>教学</h1>
+
+	      <p>每种教学都有它自己独特的目标、信息、条件和环境。通过记录和分享 p5 的研讨会、课程和材料，我们希望更好地连接全球的 p5.js 学习者和教育者社区。<a href="" onclick= "window.open('https://docs.google.com/forms/d/e/1FAIpQLSei8yHX2BROMnMQeZT_tsSXJOH13TPRG6CB4GVHH1oL1hzkZg/viewform?usp=sf_link', '_blank')">分享或推荐</a> 你自己的教学经验！</p>
+						
+    </section>
+
+<!-- workshops 
+	<section class ="workshopS">
+	
+      <div id="upcoming-workshops"></div>
+		  	<h2 class = "heading">即将举行的工作坊</h2>
+			<div class = "workshop-content">
+				<div class ="upcoming-banners">
+					<a id ="banner1" class ="banner1" href="" onclick= "window.open('https://github.com/', '_blank')"><img class ="banner-img" src="https://drive.google.com/uc?export=veiw&id=1EEY7HczusJEljqd1TCY_jXd6xMG5hrSC" alt="workshop1"></a>
+					<a id ="banner2" class ="banner2" href="" onclick= "window.open('https://github.com/', '_blank')"><img class ="banner-img" src="https://drive.google.com/uc?export=veiw&id=1k_mau09UJI1BJK--xmJxMQyecx2lgdV5" alt="workshop2"></a>
+					<a id ="banner3" class ="banner3" href="" onclick= "window.open('https://github.com/', '_blank')"><img class ="banner-img" src="https://drive.google.com/uc?export=veiw&id=1MmCBCqpenobJA3xyCsemaeh_IoAapMX5" alt="workshop3"></a>
+					<div class ="upcoming-time">
+						<p id ="time1" class ="time time1">每年在纽约市举行两次</p>
+						<p id ="time2" class ="time time2">2023年3月，每个星期六下午2-6点</p>
+						<p id ="time3" class ="time time3">2023年5月，每个星期日下午5-8点</p>
+					</div>
+				</div>
+				<ul class ="workshops">
+					<li class = "workshop"><p class = "workshop1-btn btn active">CC Fest（创意编码节）</p></li>
+					<li class = "workshop"><p class = "workshop2-btn btn">快乐猫节</p></li>
+					<li class = "workshop"><p class = "workshop3-btn btn">快乐狗节</p></li>
+				</ul>
+			</div>
+		
+    </section>
+-->
+	<section>
+
+		<div id="resources"></div>
+			<h2 class = "heading">p5 教学资源</h2> 
+			
+			<div class="search-filter"><input type="checkbox"><label> 搜索过滤 &#x2192;</label></div>
+
+     		<!-- search-results -->
+
+     		<div class="filter-panel">
+
+							
+				<ul class="filters" id="filters">
+
+					<li><p class = "filter-title">多样性和包容性: </p></li>
+					<li><input type="checkbox" id="gender" value="gender"><label for="gender">性别</label></li>
+					<li><input type="checkbox" id="race-ethnicity" value="race-ethnicity"><label for="race-ethnicity">种族和民族</label></li>
+					<li><input type="checkbox" id="language" value="language"><label for="language">语言</label></li>
+					<li><input type="checkbox" id="neuro-type" value="neuro-type"><label for="neuro-type">神经类型</label></li>
+					<li><input type="checkbox" id="ability" value="ability"><label for="ability">能力</label></li>
+					<li><input type="checkbox" id="class" value="class"><label for="class">阶级</label></li>
+					<li><input type="checkbox" id="religion" value="religion"><label for="religion">宗教</label></li>
+					<li><input type="checkbox" id="subculture" value="subculture"><label for="subculture">（子）文化</label></li>
+					<li><input type="checkbox" id="political-opinion" value="political-opinion"><label for="political-opinion">政治观点</label></li>
+					<li><input type="checkbox" id="age" value="age"><label for="age">年龄</label></li>
+					<li><input type="checkbox" id="skill-level" value="skill-level"><label for="skill-level">技能水平</label></li>
+					<li><input type="checkbox" id="occupation" value="occupation"><label for="occupation">职业</label></li>
+					<li><input type="checkbox" id="noCodeSnobs" value="noCodeSnobs"><label for="noCodeSnobs">#noCodeSnobs</label></li>
+					<li><input type="checkbox" id="newKidLove" value="newKidLove"><label for="newKidLove">#newKidLove</label></li>
+					<li><input type="checkbox" id="unassumeCore" value="unassumeCore"><label for="unassumeCore">#unassumeCore</label></li>
+					<li><input type="checkbox" id="BlackLivesMatter" value="BlackLivesMatter"><label for="BlackLivesMatter">#BlackLivesMatter</label></li>
+							
+
+					<li class="clear"></li>
+					<li><p class = "filter-title">场馆: </p></li>
+
+					<li><input type="checkbox" id="africa" value="africa"><label for="africa">非洲</label></li>
+					<li><input type="checkbox" id="asia" value="asia"><label for="asia">亚洲</label></li>
+					<li><input type="checkbox" id="europe" value="europe"><label for="europe">欧洲</label></li>
+					<li><input type="checkbox" id="north-america" value="north-america"><label for="north-america">北美洲</label></li>
+					<li><input type="checkbox" id="oceania" value="oceania"><label for="oceania">大洋洲</label></li>
+					<li><input type="checkbox" id="south-america" value="south-america"><label for="south-america">南美洲</label></li>
+					<li><input type="checkbox" id="virtual-online" value="virtual-online"><label for="virtual-online">虚拟-在线 &#x1F310;</label></li>
+
+
+
+					<li class="clear"></li>
+					<li><p class = "filter-title">年份: </p></li>
+					<li><input type="checkbox" id="2014" value="2014"><label for="2014">~2014</label></li>
+					<li><input type="checkbox" id="2015" value="2015"><label for="2015">2015</label></li>
+					<li><input type="checkbox" id="2016" value="2016"><label for="2016">2016</label></li>
+					<li><input type="checkbox" id="2017" value="2017"><label for="2017">2017</label></li>
+					<li><input type="checkbox" id="2018" value="2018"><label for="2018">2018</label></li>
+					<li><input type="checkbox" id="2019" value="2019"><label for="2019">2019</label></li>
+					<li><input type="checkbox" id="2020" value="2020"><label for="2020">2020</label></li>
+					<li><input type="checkbox" id="2021" value="2021"><label for="2021">2021</label></li>
+					<li><input type="checkbox" id="2022" value="2022"><label for="2022">2022</label></li>
+
+					<li class="clear"></li>
+					<li><p class = "filter-title">难度级别: </p></li>
+					<li><input type="checkbox" id="elementary" value="elementary"><label for="elementary">初级</label></li>
+					<li><input type="checkbox" id="intermediate" value="intermediate"><label for="intermediate">中级</label></li>
+					<li><input type="checkbox" id="advanced" value="advanced"><label for="advanced">高级</label></li>
+				 </ul>
+
+						  <br>
+								
+
+			</div>
+												
+			<div class = "results-wrapper">
+
+						
+				<div class="results" id="search-results">
+					<ul class ="result-list">
+						  <li class="case-list" data-category="2022 ethnicity language noCodeSnobs elementary"><a href="#case1" class="caseBtn" >"在高中使用 p5.js 介绍视频游戏编程", Emanuele Bolognesi</a>
+						  	<div class ="labels"><label class="2022 tags">2022</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="noCodeSnobs tags">#noCodeSnobs</label></div>
+						  </li>
+						  
+						  <li class="case-list" data-category="2022 gender sexual-orientation race-ethnicity language neuro-type ability class culture subculture age skill-level occupation noCodeSnobs advanced"><a href="#case2" class="caseBtn" >"分形实现", Mariana</a>
+						  <div class ="labels"><label class="2022 tags">2022</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="neuro-type tags">神经类型</label><label class="ability tags">能力</label><label class="class tags">阶级</label><label class="subculture tags">（子）文化</label><label class="age tags">年龄</label><label class="skill-level tags">技能水平</label><label class="occupation tags">职业</label><label class="noCodeSnobs tags">#noCodeSnobs</label></div>
+						  </li>
+						 
+						  <li class="case-list" data-category="2022 gender sexual-orientation elementary intermediate advanced"><a href="#case3" class="caseBtn" >"使用p5.js入门计算媒体", Barry Voeten</a>
+						  <div class ="labels"><label class="2022 tags">2022</label><label class="gender tags">性别</label></div>
+						  </li>
+						  
+						  <li class="case-list" data-category="2021 gender sexual-orientation language elementary"><a href="#case4" class="caseBtn" >"身体质量指数计算器", Dayana</a>
+						  <div class ="labels"><label class="2021 tags">2021</label><label class="gender tags">性别</label><label class="language tags">语言</label></div>
+						  </li>
+						 
+						  <li class="case-list" data-category="2021 gender sexual-orientation language elementary"><a href="#case5" class="caseBtn" >"创意编程工作坊", Federico Santana</a>
+						  <div class ="labels"><label class="2021 tags">2021</label><label class="gender tags">性别</label><label class="language tags">语言</label></div>
+						  </li>
+						 
+						  <li class="case-list" data-category="2021 race-ethnicity age skill-level elementary"><a href="#case6" class="caseBtn" >"50+编程俱乐部：我和家人一起的第一个手绘图案", Inhwa Yeom</a>
+						  <div class ="labels"><label class="2021 tags">2021</label><label class="race-ethnicity tags">种族和民族</label><label class="age tags">年龄</label><label class="skill-level tags">技能水平</label></div>
+						  </li>
+						  
+						  <li class="case-list" data-category="2021 gender sexual-orientation elementary"><a href="#case7" class="caseBtn" >"p5js入门", Bérenger Recoules a.k.a b2renger</a>
+						  <div class ="labels"><label class="2021 tags">2021</label><label class="gender tags">性别</label></div>
+						  </li>
+						 
+						  <li class="case-list" data-category="2020 gender sexual-orientation elementary intermediate advanced"><a href="#case8" class="caseBtn" >"我开始了一个新的课程 -", Brinder Soin</a>
+						  <div class ="labels"><label class="2020 tags">2020</label><label class="gender tags">性别</label></div>
+						  </li>
+						 
+						  <li class="case-list" data-category="2020 gender sexual-orientation race-ethnicity language class culture subculture political-opinion age noCodeSnobs elementary intermediate"><a href="#case9" class="caseBtn" >"应用于视觉和交互艺术的编程", Sebastián Zavatarelli</a>
+						  <div class ="labels"><label class="2020 tags">2020</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="class tags">阶级</label><label class="subculture tags">（子）文化</label><label class="political-opinion tags">政治观点</label><label class="age tags">年龄</label><label class="noCodeSnobs tags">#noCodeSnobs</label></div>
+						  </li>
+						 
+						  <li class="case-list" data-category="2020 intermediate"><a href="#case10" class="caseBtn" >"用代码绘画", Andreas Refsgaard</a>
+						  <div class ="labels"><label class="2020 tags">2020</label></div>
+						  </li>
+						 
+						  <li class="case-list" data-category="2020 gender sexual-orientation race-ethnicity language neuro-type ability class skill-level elementary"><a href="#case11" class="caseBtn" >"人手语编程", Taeyoon Choi</a>
+						  <div class ="labels"><label class="2020 tags">2020</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="neuro-type tags">神经类型</label><label class="ability tags">能力</label><label class="class tags">阶级</label><label class="skill-level tags">技能水平</label></div>
+						  </li>
+						 
+						  <li class="case-list" data-category="2020 gender sexual-orientation race-ethnicity skilllevel, occupation elementary"><a href="#case12" class="caseBtn" >"数字编织和物理计算工作坊系列", Qianqian Ye</a>
+						  <div class ="labels"><label class="2020 tags">2020</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="skill-level tags">技能水平</label><label class="occupation tags">职业</label></div>
+						  </li>
+
+				  		  <li class="case-list" data-category="2019 europe gender race-ethnicity age skill-level BlackLivesMatter advanced"><a href="#case13" class="caseBtn" >"p5.js à l'Ubuntu Party!", Basile Pesin</a>
+						  <div class ="labels"><label class="2019 tags">2019</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="age tags">年龄</label><label class="skill-level tags">技能水平</label><label class="BlackLivesMatter tags">#BlackLivesMatter</label></div>
+						  </li>
+
+				  		  <li class="case-list" data-category="2020 asia age skill-level occupation elementary advanced"><a href="#case14" class="caseBtn">"Making The Thing that Makes the Thing: Exploring Generative Art &#x0026; Design with p5.js", Priti Pandurangan &#x0026; Ajith Ranka</a>
+						  <div class ="labels"><label class="2020 tags">2020</label><label class="gender tags">性别</label><label class="skill-level tags">技能水平</label><label class="occupation tags">职业</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="2016 2019 2020 elementary intermediate advanced north-america gender race-ethnicity language neuro-type ability subculture occupation north-america"><a href="#case15" class="caseBtn">CC Fest (Creative Coding Festival), Saber</a>
+						  <div class ="labels"><label class="2016 tags">2016</label><label class="2019 tags">2019</label><label class="2020 tags">2020</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="neuro-type tags">神经类型</label><label class="ability tags">能力</label><label class="subculture tags">（子）文化</label><label class="occupation tags">职业</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="2018 virtual-online south-america gender race-ethnicity language neuro-type religion subculture age noCodeSnobs newKidLove unassumeCore elementary intermediate advanced"><a href="#case16" class="caseBtn" >"Taller Introducci&#x00F3;n a la Programaci&#x00F3;n Creativa con p5.js", Aar&#x00F3;n Montoya-Moraga</a>
+						  <div class ="labels"><label class="2018 tags">2018</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="neuro-type tags">神经类型</label><label class="religion tags">宗教</label><label class="subculture tags">（子）文化</label><label class="age tags">年龄</label><label class="noCodeSnobs tags">#noCodeSnobs</label><label class="newKidLove tags">#newKidLove</label><label class="unassumeCore tags">#unassumeCore</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="2020 north-america gender race-ethnicity class subculture age skill-level elementary"><a href="#case17" class="caseBtn" >"Introduction to Generative Drawing", Adam Herst</a>
+						  <div class ="labels"><label class="2020 tags">2020</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="class tags">阶级</label><label class="subculture tags">（子）文化</label><label class="age tags">年龄</label><label class="skill-level tags">技能水平</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="2020 asia virtual-online gender race-ethnicity language neuro-type Size skill-level ability class religion subculture political-opinion age skill-level occupation elementary"><a href="#case18" class="caseBtn" >Open Lecture "Creative Coding: 2020", Shunsuke Takawo</a>
+						  <div class ="labels"><label class="2020 tags">2020</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="neuro-type tags">神经类型</label><label class="ability tags">能力</label><label class="class tags">阶级</label><label class="religion tags">宗教</label><label class="subculture tags">（子）文化</label><label class="political-opinion tags">政治观点</label><label class="age tags">年龄</label><label class="skill-level tags">技能水平</label><label class="occupation tags">职业</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="2020 asia gender race-ethnicity language neuro-type Size skill-level ability class religion subculture political-opinion age skill-level occupation intermediate"><a href="#case19" class="caseBtn" >"Creative Coding for Static Graphics", Shunsuke Takawo</a>
+						  <div class ="labels"><label class="2020 tags">2020</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="neuro-type tags">神经类型</label><label class="ability tags">能力</label><label class="class tags">阶级</label><label class="religion tags">宗教</label><label class="subculture tags">（子）文化</label><label class="political-opinion tags">政治观点</label><label class="age tags">年龄</label><label class="skill-level tags">技能水平</label><label class="occupation tags">职业</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="2020 north-america virtual-online race-ethnicity language subculture skill-level"><a href="#case20" class="caseBtn" >"Generative Typography", Dae In Chung</a>
+						  <div class ="labels"><label class="2020 tags">2020</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="subculture tags">（子）文化</label><label class="skill-level tags">技能水平</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="2019 north-america gender race-ethnicity language age skill-level occupation noCodeSnobs new unassumeCore BlackLivesMatter elementary intermediate"><a href="#case21" class="caseBtn" >"Machine Learning for the Web", Yining Shi</a>
+						  <div class ="labels"><label class="2019 tags">2019</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="age tags">年龄</label><label class="skill-level tags">技能水平</label><label class="occupation tags">职业</label><label class="noCodeSnobs tags">#noCodeSnobs</label><label class="newKidLove tags">#newKidLove</label><label class="unassumeCore tags">#unassumeCore</label><label class="BlackLivesMatter tags">#BlackLivesMatter</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="europe virtual-online gender elementary"><a href="#case22" class="caseBtn" >"Introduction to p5.js and JavaScript", Nico Reski</a>
+						  <div class ="labels"><label class="gender tags">性别</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="2019 north-america gender race-ethnicity skill-level occupation"><a href="#case23" class="caseBtn">"Digital Weaving &#x0026; Physical Computing Workshop Series", Qianqian Ye &#x0026; Evelyn Masso</a>
+						  <div class ="labels"><label class="2019 tags">2019</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="skill-level tags">技能水平</label><label class="occupation tags">职业</label></div>
+						  </li>
+
+						  <li class="case-list" data-category="2015 2020 north-america asia gender race-ethnicity language neuro-type ability class skill-level"><a href="#case24" class="caseBtn">"Signing Coders", Taeyoon Choi</a>
+						  <div class ="labels"><label class="2015 tags">2015</label><label class="2020 tags">2020</label><label class="gender tags">性别</label><label class="race-ethnicity tags">种族和民族</label><label class="language tags">语言</label><label class="neuro-type tags">神经类型</label><label class="ability tags">能力</label><label class="class tags">阶级</label><label class="skill-level tags">技能水平</label></div>
+						  </li>
+	    			</ul>
+						<br>
+				</div> 
+			</div>
+						
+
+		<!--modal box section-->
+		
+			<!--modal boxes-->
+			<!--box1-->
+
+			<div id="caseModals" class="modal">
+
+				<div class="modal-content" id="case1"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>在高中使用 p5.js 介绍视频游戏编程</span></li>
+				        	<li class = "case"><p class="lead-name">Emanuele Bolognesi</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+							<li class = "case"><img src="https://drive.google.com/uc?export=veiw&id=1VsFv30_C2l19935XTxHKonv-XKYT1o8r" alt="一张有 25 名学生和他们的老师的合照"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>02/06/2022 ~ 04/10/2022, 每周六 10:00-11:00</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>25 名意大利高中生（15-16 岁）。11 名女生和 14 名男生
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>通过使用 JavaScript 和 p5.js，向十年级学生介绍简单的视频游戏编程。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>方法：p5.js网络编辑器</p><p><a href = "https://docs.google.com/document/d/1JIsGi_rDsHeQstoJ0veutoi2LxeMRvYagg8pXUbAUKw/edit?usp=sharing">Syllabus</a>.</p><p><a href = "https://docs.google.com/document/d/1fxPBtKH0uJebZpvSBxc-jbkE5Jj33aakGYcn3h287Ow/edit?usp=sharing">The works of the students</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>种族和民族</label><label>语言</label><label>#noCodeSnobs</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+
+				<!--box2-->
+				  <div class="modal-content" id="case2"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>分形实现</span></li>
+				        	<li class = "case"><p class="lead-name">Mariana</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>2022年2月6日15:00~15:30</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>15人
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>中级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>介绍分形主题并使用p5js实现</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>仅有 <a href = "https://docs.google.com/presentation/d/1ip8QnSZdF1PekqXNsBaXrsKUy65U5D767cgwd_nKli0/edit?usp=sharing">Slides</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>语言</label><label>神经类型</label><label>能力</label><label>阶级</label><label>（子）文化</label><label>年龄</label><label>技能水平</label><label>职业</label><label>#noCodeSnobs</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box3-->
+				<div class="modal-content" id="case3"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>使用p5.js入门计算媒体</span></li>
+				        	<li class = "case"><p class="lead-name">Barry Voeten</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>整个课程</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>荷兰学校的14-15岁的学生
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初、中、高级别</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>教育</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p><a href = "https://nycdoe-cs4all.github.io/index.html">Syllabus</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box4-->
+				<div class="modal-content" id="case4"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>身体质量指数计算器</span></li>
+				        	<li class = "case"><p class="lead-name">Dayana</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>00h: 30min</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>“订阅我的YouTube频道的人，有18次浏览。”
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级、初学者</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>帮助那些刚开始学习编程的人。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>p5.js Web编辑器，YouTube教程</p><p><a href = "https://preview.p5js.org/dayanakaroline9/present/aPRbJ_8t6">p5.js web editor</a>.</p><p><a href = "https://www.youtube.com/watch?v=0nqjnoHBM_4">Youtube</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>语言</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box5-->
+				<div class="modal-content" id="case5"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>创意编程工作坊</span></li>
+				        	<li class = "case"><p class="lead-name">Federico Santana</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+							<li class = "case"><img src="https://i.ibb.co/SdKSgTX/Taller-Programacion-Artistica.jpg" alt="屏幕截图，教师正在线上p5.js网络编辑器上教学"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>每周六19:00-20:30(时区：GMT-3)</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>“只有我，但我喜欢邀请人们一起编程。”
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初学者</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>帮助更多的人学习关于创意艺术的知识，同时将其引入到数学的世界， 所有的教学都是用西班牙语进行的。这个课程强烈受到"The coding train"的启发， 但是将数学和创意艺术结合在了一起。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>这只是p5js的一些示例集合，包括了我们在课程中实时演示的所有内容。地址：</p><p><a href = "https://editor.p5js.org/fede.santana/collections/UQkKGQbFD">p5.js web editor</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>语言</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box6-->
+				<div class="modal-content" id="case6"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>50+编程俱乐部：我和家人一起的第一个手绘图案</span></li>
+				        	<li class = "case"><p class="lead-name">Inhwa Yeom</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+							<li class = "case"><img src="https://i0.wp.com/p5for50.plus/wp-content/uploads/2021/02/ad9k2036.jpg?w=580&ssl=1?strip=info&w=2000" alt="课堂照片"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>2020年11月27日至12月，每周五、六2:00-4:00</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>平均年龄为62.54岁的老年人及其所有伴侣。
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>p5 for 50+旨在提高50岁以上人口的数字素养和权利意识</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>p5编辑器、p5for50+网络应用程序、p5js.org、print out of code results</p><p><a href = "https://p5for50.plus/2020-acc-open-academy/">2020 ACC Open Academy</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>种族和民族</label><label>年龄</label><label>技能水平</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box7-->
+				<div class="modal-content" id="case7"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>p5js入门</span></li>
+				        	<li class = "case"><p class="lead-name">Bérenger Recoules a.k.a b2renger</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+							<li class = "case"><img src="https://github.com/b2renger/Introduction_p5js/raw/master/assets/01_dessiner_05.png" alt="示例图片"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>从2018年至今</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>南特大西洋设计学院的学生
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初学者</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>了解p5js及其各种功能（dom、audio、webgl等）</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>GitHub自述文件：这是一个法语阅读的文本教程。</p><p><a href = "https://github.com/b2renger/Introduction_p5js">GitHub</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box8-->
+				<div class="modal-content" id="case8"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>我开始了一个新的课程 -</span></li>
+				        	<li class = "case"><p class="lead-name">Brinder Soin</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>12/28至12/30</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>来自各个学校和地区的7、8和9年级约100名学生。
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初、中、高级别</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>使儿童在疫情期间保持安全和学习，推广STEM教育</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>教师创建的说明和工作表以及IDE p5 Web编辑器。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box9-->
+				<div class="modal-content" id="case9"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>应用于视觉和交互艺术的编程</span></li>
+				        	<li class = "case"><p class="lead-name">Sebastián Zavatarelli</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+							<li class = "case"><img src="https://drive.google.com/uc?export=view&id=1oHCP25kA3x7ZyXG6QJmHky26jDnTt_IF" alt="一节Zoom课分享p5.js网络编辑器"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>2020年9月15日10月14日，每周三下午6:30 - 9:00</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>约10人。大部分为女性。
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初、中级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>该课程旨在帮助艺术家使用当前的技术工具来开发他们的作品。 对于那些想通过一个简单、直观、易用且有趣的编程环境学习计算机编程的人也是有帮助的。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>p5.js网络编辑器。在线使用ZOOM平台，并在Moodle平台上上传材料。</p><p><a href = "http://www.asmamultimedia.com.ar/obras/">Obras</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>语言</label><label>阶级</label><label>（子）文化</label><label>政治观点</label><label>年龄</label><label>#noCodeSnobs</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box10-->
+				<div class="modal-content" id="case10"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>用代码绘画</span></li>
+				        	<li class = "case"><p class="lead-name">Andreas Refsgaard</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>2020年2月22日</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>参与者是人们。来自范围广泛的人群。
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>中级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>介绍p5.js，帮助创意人士、设计师、艺术家和其他不习惯使用代码的人了解p5.js。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>网站，p5.js编辑器</p><p><a href = "https://andreasref.github.io/p5js/">Intro</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case">
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box11-->
+				<div class="modal-content" id="case11"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>人手语编程</span></li>
+				        	<li class = "case"><p class="lead-name">Taeyoon Choi</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>5 Sessions, each 2~3 hours</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>纽约市年龄在10~50岁的聋人和听障学生。
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>通过有趣的练习帮助聋人和听障学生学习计算机编程。制作基本编码概念的美国手语教程。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>我们使用p5.js网络编辑器和网站上的代码示例。 我们还使用骰子、纸牌和各种纸质工具来帮助学生了解编码概念。</p><p><a href = "http://taeyoonchoi.com/soft-care/signing-coders">Signing Coders</a>.</p><p><a href = "http://taeyoonchoi.com/soft-care/signing-coders/signing-coders-1/">Signing coders #1</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>语言</label><label>神经类型</label><label>能力</label><label>阶级</label><label>技能水平</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+				<!--box12-->
+				<div class="modal-content" id="case12"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>数字编织和物理计算工作坊系列</span></li>
+				        	<li class = "case"><p class="lead-name">Qianqian Ye</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+							<li class = "case"><img src="https://drive.google.com/uc?export=view&id=1PihhizmIN2I6yKfd1N4Cv-8i-3MGu5e8" alt="课堂照片"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>2019年10月19日~11月2日，每周六下午3-6点</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>15名女性和非二元艺术家、设计师、制作者、程序员。
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>在三个工作坊的过程中，我们将使用开源的图形库p5.js来绘制和创建模式； 我们将学习并应用计算概念来转换模式； 最后，我们将使用电子微控制器将编织物带给生活。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>材料：幻灯片，p5.js网络编辑器，笔和纸画图案、 物理图案编织工具的小组会议方法</p><p><a href = "https://docs.google.com/presentation/d/1gJ67aKVGydSNoeUraS7U_QevcnOuxnSFQ_4640Qlifo/edit?usp=sharing">1 - Digital Weaving & Physical Computing Workshop</a>.</p><p><a href = "https://docs.google.com/presentation/d/1nuje9-j_o5HbCoxXR_EJhAYmSEjTQOkAHmBsuKRlwwA/edit?usp=sharing">2 - Digital Weaving & Physical Computing Workshop</a>.</p><p><a href = "https://womenscenterforcreativework.com/events/digital-weaving-physical-computing/">Digital Weaving, Physical Computing</a>.</p></li>
+							
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>技能水平</label><label>职业</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+
+				<!--modal box #1-->
+
+				  <div class="modal-content" id="case13"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>p5.js à l'Ubuntu Party!</span></li>
+				        	<li class = "case"><p class="lead-name">Basile Pesin</p></li>
+
+				          	<li class = "clear"></li>
+				            <li class = "clear"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期<p><a href="https://ubuntu-paris.org/">2020年Ubuntu派对</a>巴黎科学工业城，法国</p></li> 
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>任何年龄，包括儿童和父母、年轻和年长的成年人。
+				            </p></li>		         
+
+				            <li class = "clear"></li>  				
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>中高级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>通过有趣和引人注目的示例，向新公众介绍编程。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>方法：现场工作坊，每次1小时，使用不同的参与者。 学生们使用(Ubuntu)机器与p5.js网络编辑器一起学习。 我使用视频投影机和白板教学。</p><p>'材料：我给出的练习可以通过p5.js网络编辑器链接获得。'<a href = "https://vertmo.github.io/ubuntu-party-p5/">GitHub</a>.</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>年龄</label><label>技能水平</label><label>#BlackLivesMatter</label>
+				            </li>
+		             
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+
+				<!--modal box #2-->
+	
+				  <div class="modal-content" id="case14"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>用p5.js探索生成艺术和设计</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Priti Pandurangan & Ajith Ranka</p></li>
+				        	
+				        	<li class = "clear"></li>
+             				<li class = "clear"></li>
+             				<li class = "case"><img src="https://drive.google.com/uc?id=1udID-B1qADY7QxDkYkAh6ZYX7D8BfrnD" alt="一组参与者合作使用p5.js网络编辑器在笔记本电脑上创建一些设计。"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期<p>&#x1F4CD; 印度国家设计研究院，班加罗尔</p><p>&#x1F4C5; 2020年2月8日，下午2:30-4:00</p></li>  				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>我们的参与者包括艺术/设计学生和专业人士、创意编程爱好者。我们有近50名参与者。
+				            </p></li>		            				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>Priti：中级；Ajith：高级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>探索生成艺术和设计，并使用p5.js重新创建一些经典作品。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>方法：现场协作、实践工作坊。</p><p>材料：<a href="https://musingswithcode.studio/generative-design-workshop">课程页面链接到p5编辑器中的草图，</a> 交互式参考指南<a href="https://musingswithcode.studio/generative-design-workshop/explainers">到p5基础知识</a>to p5 basics</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>技能水平</label><label>职业</label></li>			    
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div>
+			        
+				  </div>
+				  <!--modal box #3-->
+	
+				  <div class="modal-content" id="case15"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>创意编程节（CC Fest）</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Saber</p></li>
+
+				        	<li class = "case"><p class = speech>"‘热爱p5.js。它对我、我的学生和这个社区意义重大。’"</p></li>
+
+				        	<li class = "clear"></li>
+				        	<li class = "clear"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>&#x1F4CD;纽约，洛杉矶，旧金山，虚拟-线上&#x1F310;</p><p>&#x1F4C5;每年两次在纽约进行了四年；每年在洛杉矶进行了三年；每年在旧金山进行了两年；现在是虚拟的</p></li>  				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>我们的参与者包括艺术/设计学生和专业人士、创意编程爱好者。我们有近50名参与者。
+				            </p></li>		            				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>中级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>围绕中学和高中使用p5来建立教师和学生社区。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>由志愿教师领导的半天工作坊。我们看到了许多不同的方法和材料。 大多数使用了某种幻灯片或文档，有些使用编辑器进行动态编码，参与者有工作时间进行重新混合。</p><p>&#x1F517; <a href="https://http://ccfest.rocks/lessons">创意编程节课程页面</a>，提供教学材料。</p><p>&#x1F4F8; <a href="http://ccfest.rocks/pictures">更多照片</a></li>
+
+              				<!--<li class = "case"><iframe src="http://ccfest.rocks/pictures" height= "200" alt="Pictures of CC Fest"></iframe></li>-->
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>语言</label><label>神经类型</label><label>能力</label><label>（子）文化</label><label>职业</label></li>	
+				    
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div>
+			        
+				  </div>
+
+				  <!--modal box #4-->
+	
+				  <div class="modal-content" id="case16"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>p5.js创意编程入门工作坊</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Aarón Montoya-Moraga</p></li>
+
+				        	<li class = "case"><p class = speech>"‘p5.js是我的快乐之处。’&#x1F495; "</p></li>
+
+				        	<li class = "clear"></li>
+              				<li class = "clear"></li>
+              				<li class = "case"><img src="https://miro.medium.com/max/1000/1*OIn_NKGuKyto9-_h6CAmmw.jpeg" alt="一组20个人坐在一个共享的大桌子上，看着一个投影屏幕上的内容。"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>&#x1F4CD; PlusCode媒体艺术节，布宜诺斯艾利斯，阿根廷和虚拟-线上 &#x1F310;</p><p>&#x1F4C5;2018年11月14日，3小时</p></li>  				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>我的工作坊有约16名学生，团队包括3名来自PlusCode媒体艺术节的人和一个场馆内的人。
+				            </p></li>		            				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级、中级、高级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>介绍p5.js入门和图形Web编程及开源艺术，使用西班牙语 :)</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>‘我使用了此材料在GitHub上的。’<a href="https://github.com/montoyamoraga/workshop-p5js-pluscode-2018">资源库</a>，我们使用了p5.js网络编辑器，进行了三小时的工作坊。</p><p>&#x1F517; <a href="https://medium.com/processing-foundation/code-electronic-art-festival-2018-argentina-803d3ca8092c">+CODE电子艺术节2018，阿根廷</a>，Medium</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>语言</label><label>神经类型</label><label>宗教</label><label>（子）文化</label><label>年龄</label><label>#noCodeSnobs</label><label>#newKidLove</label><label>#unassumeCore</label></li>
+				    
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+
+				  <!--modal box #5-->
+	
+				  <div class="modal-content" id="case17"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			               <!-- <h2 class="modal-title"></h2>--> 
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>创意编程导论</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Adam Herst</p></li>
+
+				        	<li class = "case"><p class = speech>"在制定工作坊时，我最大的不确定性是它是在向程序员教授艺术，还是在向艺术家教授编程。"</p></li>
+
+				            <li class = "clear"></li>
+              				<li class = "clear"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>&#x1F4CD; <a href="https://interaccess.org/studio">Inter/Access</a>（艺术家经营中心），加拿大安大略省多伦多市</p><p>现场进行，远程学习有自主控制工作手册</p><p>&#x1F4C5;2020年2月12日，晚上7点至9点</p></li>  				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>15名艺术家
+				            </p></li>		            				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>介绍p5.js给没有或很少有编程经验的艺术家，并建议一种从模拟实践迁移到数字形式的方法。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD;方法和材料</p><p>通过使用p5.js网络编辑器的活动，展示如何将物理图纸转化为数字图纸的印刷工作手册。</p><p>&#x1F517;<a href="https://interaccess.org/event/2019/processing-community-day-generative-drawing">Processing Community Day 2019:在Inter/Access举办的生成绘图</a></p><p>&#x1F517;<a href="https://adamherst.art/introduction_to_generative_drawing_letter.pdf">创意编程导论PDF文件</a></p><p>&#x1F517;<a href="https://adamherst.art/introduction_to_generative_drawing_letter.pdf">创意编程导论小册子PDF文件</a></p></li>		
+
+				    		<li class = "clear"></li>
+				        	<li class = "case"><label>性别</label><label>种族和民族</label><label>阶级</label><label>（子）文化</label><label>年龄</label><label>技能水平</label></li>
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div>
+			        
+				  </div>
+
+				  <!--modal box #6-->
+	
+				  <div class="modal-content" id="case18"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			               <!-- <h2 class="modal-title"></h2>--> 
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>创意编程: 2020年开放讲座</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Shunsuke Takawo</p></li>
+
+				        	<li class = "case"><p class = speech>"我喜欢p5.js，因为它非常容易在p5.js中阅读和编写代码。在日常生活中进行编码！"</p></li>
+
+				        	<li class = "clear"></li>
+				          	<li class = "clear"></li>	
+				          	<li class = "case"><img src="https://lh3.googleusercontent.com/pw/ACtC-3eYswa6tJH5pvfvvAAfXQJO71ncsdgpwDBvbPAL-qcwnLkkpuoAVpggOb2-LYSLqo0Htd8cgnv5i8yLJg6Wh7J_rW2MMy6y8XZRznRByjj2mGJHf8XFmDI-8W6mH7urrEQC2tyUMF1HWaamLTNBqmIyeQ=w1560-h878-no?authuser=0" alt="一张图片中放置着一台笔记本电脑，数张纸和五颜六色的笔， 以及两台自动绘画机器，以一个钢笔在纸上画画。"></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>&#x1F4CD;日本京都艺术与设计大学与虚拟联合举办&#x1F310;</p><p>&#x1F4C5;2020年3月16日至18日，下午1-7点</p></li>  				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>京都艺术与设计大学的学生，任何人
+				            </p></li>		            				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>通过编程表达出艺术想法</p></li>
+
+				            <li class = "clear"></li>
+				          
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>Dropbox Paper，p5.js网络编辑器。</p><p>&#x1F517; <a href="https://paper.dropbox.com/doc/Day1-1-p5.js-i15dvmUETr4ef1xnydzru">课程大纲</a><p>&#x1F517; <a href="https://youtu.be/aS5CvADPdk0">第一天</a>, <a href="https://youtu.be/ZCO-8CubifI">第二天</a>, <a href="https://youtu.be/nbcckC5iwIcsyllabus">第三天</a>YouTube</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>语言</label><label>神经类型</label><label>能力</label><label>阶级</label><label>宗教</label><label>（子）文化</label><label>政治观点</label><label>年龄</label><label>技能水平</label><label>职业</label></li>
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div>
+			        
+				  </div>
+
+				  <!--modal box #7-->
+	
+				  <div class="modal-content" id="case19"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			               <!-- <h2 class="modal-title"></h2>--> 
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>创意编码静态图形</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Shunsuke Takawo</p></li>
+
+				        	<li class = "case"><p class = speech>"在p5.js中进行编码非常有趣。如果你还没有尝试过，我鼓励你试一试！"</p></li>
+
+				        	<li class = "clear"></li>
+				        	<li class = "clear"></li>
+				        	<li class = "case"><img src="https://uc6d9323e0272069edcf30e9c501.previews.dropboxusercontent.com/p/thumb/AA5dvRUhxkQ9wLU6mHcrEmLvXnV7gbapPG2PvVf5K8K9ktlC59RCtvbSCP7YfEgPcFtnsgQekujWSD8iEfc6UT2pouzLdZUElblXhh9wg_b2UKDU-OO1u8VaiuC91g73tQX9S9mTHIgvm4h_Jw9-P4F6-iyjqBz57CvFWhilM5CpNbiPIjVRX6NsMkSYA3IexYreShT6Bt2hOWnorsocCsaafJiAd3cZbplWnGiuZmCn5R7BJ4u770YRjqX-AKh6AaoOb3kZHwBBnPQSU7zxiHqZbrWirjwLprw5D5UKW4bMI6We85Yn8cDPlJ6CktIqwpepAhdRi7scaxLxGnpIE4XjnoxK6T1jHkWZXGkvPplV1qlvrC7qz2jTY1_cULKcAcV8F-I-xvAL5I0n3rRHCZqr/p.jpeg?fv_content=true&size_mode=5" alt=""></li>
+
+				            <li class = "case"><p class = "subtitle">场馆和日期</p><p>&#x1F4CD;日本东京的FabCafe MTRL</p><p>&#x1F4C5;2019年9月15日，下午4点至7点</p></li>  				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>任何想尝试p5.js编码的人
+				            </p></li>		            				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>中级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>从图形设计的角度进行编码</p></li>
+
+				            <li class = "clear"></li>
+				          
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>Dropbox Paper，p5.js网络编辑器。</p><p>&#x1F517; <a href="https://paper.dropbox.com/doc/--A6IUdC5pD_0QfbWt1PQ5u~PiAg-Fk8qxFWjaJWeH1cAc8FT0">课程大纲和材料</a></p></li>	
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>语言</label><label>神经类型</label><label>能力</label><label>阶级</label><label>宗教</label><label>（子）文化</label><label>政治观点</label><label>年龄</label><label>技能水平</label><label>职业</label></li>
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div>
+			        
+				  </div>
+
+				  <!--modal box #8-->
+	
+				  <div class="modal-content" id="case20"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			               <!-- <h2 class="modal-title"></h2>--> 
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>生成式排版</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Dae In Chung</p></li>
+
+				        	<li class = "clear"></li>
+				        	<li class = "clear"></li>
+				        	<li class = "case"><img src="https://drive.google.com/uc?id=1TqcLurMLFioe8EcoJGtdK9_gs9bZ5odW" alt="一张黑色背景的图片，显示了字母“b”以5种不同的风格呈现，并提供了各种风格选项的菜单。"></li>
+
+            	            <li class = "case"><p class = "subtitle">场馆和日期</p><p>&#x1F4CD;美国马里兰州巴尔的摩市和虚拟联合&#x1F310;</p><p>&#x1F4C5;2019年1月21日至5月8日，每个星期三晚上4点至晚上10点</p></li>  
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>初中级本科生和研究生，他们很少或没有编程经验。
+				            </p></li>		            				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>通过计算机操作实验排版形式和结构。</p></li>
+
+				            <li class = "clear"></li>
+				          
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>方法：在线/离线讲座和批评。</p><p>材料：p5js在线编辑器，Github，Youtube教程。</p><p>&#x1F517; <a href="https://drive.google.com/drive/folders/15aFXijbqworOoLpc0fD283YOgi7UIHMA?usp=sharing">参与者的作品</a></p></li>	
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>种族和民族</label><label>语言</label><label>（子）文化</label><label>技能水平</label></li>
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div> 
+			        
+				  </div>
+
+
+				  <!--modal box #9-->
+	
+				  <div class="modal-content" id="case21"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			               <!-- <h2 class="modal-title"></h2>--> 
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>网络机器学习</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Yining Shi</p></li>
+
+				            <li class = "clear"></li>
+              				<li class = "clear"></li>
+              				<li class = "case"><img src="https://drive.google.com/uc?id=1pO3s4lraBwtLcZoCIeHGVncuwtzHqN6o" alt="一组16个人围在桌子旁，拿着笔记本电脑、手机和一些其他配件，朝着一台大电视屏幕。"></li>
+
+              			    <li class = "case"><p class = "subtitle">场馆和日期</p><p>&#x1F4CD;纽约市布鲁克林区杰伊TP，纽约大学。地址：370 Jay St, Brooklyn, NY 11201, USA</p><p>&#x1F4C5;2019年3月9日至10月12日，每周二晚上6:30-9:00</p></li>  				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>纽约大学交互式电信计划（ITP）的学生。16人。
+				            </p></li>		            				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级、中级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>本课程的目标是学习和理解常见的机器学习技术，并应用这些技术在浏览器中使用ml5.js和p5.js生成创意输出。</p></li>
+
+				            <li class = "clear"></li>
+				          
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>本课程是讲座、编程会议、小组讨论和演示的混合体。我使用<a href="https://github.com/yining1023/machine-learning-for-the-web">GitHub</a>：用于托管课程大纲和所有编程材料。Google幻灯片用于讲座，p5.js网络编辑器用于现场编程会议。</p><p>方法：在线/离线讲座和批评。</p></li>	
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>语言</label><label>年龄</label><label>技能水平</label><label>职业</label><label>#noCodeSnobs</label><label>#newKidLove</label><label>#unassumeCore</label><label>#BlackLivesMatter</label></li>
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div>
+			        
+				  </div>
+
+				  <!--modal box #10-->
+	
+				  <div class="modal-content" id="case22"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			               <!-- <h2 class="modal-title"></h2>--> 
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>p5.js和JavaScript入门</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Nico Reski</p></li>
+
+				        	<li class = "clear"></li>
+				        	<li class = "clear"></li>
+
+              			    <li class = "case"><p class = "subtitle">场馆和日期<p>&#x1F4CD;目前可供个人在自己的节奏下学习，附有幻灯片，如下链接。</p></li>  				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初学者，初级</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>向学习者介绍p5.js（和JavaScript）的最基础知识，以鼓励创意编程并让他们在安全环境中追求自己的项目。</p></li>
+
+				            <li class = "clear"></li>
+				          
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>p5.js源代码（用于介绍性项目），JavaScript源代码（说明一些基本的JavaScript功能）， 附带的.pdf格式幻灯片，所有这些都公开托管在GitHub上。</p><p>&#x1F517; <a href="https://reski.nicoversity.com/ws_cc_p5js_introduction.html">概述</a>以及工作坊和其中的内容（包括托管在 GitHub 上的所有链接）在我的学术网页上。</p></li>	
+
+				            <li class = "clear"></li>
+				            <li class = "case"><label>性别</label></li>
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div>
+			        
+				  </div>
+
+				  <!--modal box #11-->
+	
+				  <div class="modal-content" id="case23"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			               <!-- <h2 class="modal-title"></h2>--> 
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>数字编织与物理计算工作坊系列</span></li>
+
+				        	<li class = "case"><p class = "lead-name">Qianqian Ye 和伊夫林·马索</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "clear"></li>
+				            <li class = "case"><img src="https://drive.google.com/uc?id=1QXtrew8S2YQ-_6R0H1FhwiEJj9_LLcpU" alt="这张图片分为两个部分。图片左边显示一个由15位女性坐在椅子上， 拿着电脑并聚精会神地看着一个展示者在投影屏幕上解释代码的场面。 图片右边显示一位人使用物理模式和编织工具学习编织。"></li>
+
+
+              			    <li class = "case"><p class = "subtitle">场馆和日期</p><p>&#x1F4CD;创意工作女性中心（WCCW），洛杉矶，加利福尼亚州，美国</p><p>&#x1F4C5;2019年10月19日至11月2日，每个星期六下午3-6点</p></li>  		
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>15名女性和非二元性别的艺术家、设计师、制作者和程序员。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级
+				            </p></li>		
+				            
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>在三个工作坊的过程中，我们将使用 p5.js，一个开源的图形库来绘制和创建图案； 我们将学习和应用计算概念来转换图案，最后，我们将用电子微控制器将编织物生动起来。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>方法：小组讨论</p><p>材料：幻灯片，p5.js 网络编辑器，纸笔绘制图案，物理模式编织工具。</p><p>&#x1F517; <a href="https://docs.google.com/presentation/d/1gJ67aKVGydSNoeUraS7U_QevcnOuxnSFQ_4640Qlifo/edit?usp=sharing">工作坊幻灯片 #1</a>, <a href="https://docs.google.com/presentation/d/1nuje9-j_o5HbCoxXR_EJhAYmSEjTQOkAHmBsuKRlwwA/edit?usp=sharing">工作坊幻灯片 #2</a></p><p>&#x1F517; <a href="https://womenscenterforcreativework.com/events/digital-weaving-physical-computing/">工作坊信息</a>在 WCCW 网站上。</p></li>
+
+							<li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>技能水平</label><label>职业</label></li>
+				         
+				            </ul>
+				        </div> 
+			            <div class="modal-footer"></div>
+			        
+				  </div>
+
+  				  <!--modal box #12-->
+	
+				  <div class="modal-content" id="case24"><div class="close"><span>&#215;</span></div>
+			            <div class="modal-header">
+			            	<br>
+			               <!-- <h2 class="modal-title"></h2>--> 
+			            </div> 
+				        <div class="modal-body">
+				        	<ul class= "cases">
+
+				        	<li class = "case"><span>手语编程</span></li>
+
+				        	<li class = "case"><p class = "lead-name">崔泰勇</p></li>
+
+				        	<li class = "case"><p class = speech>"我正在为韩国的残障学生准备一系列新的编码课程。我正在研究教学方法和翻译。 我计划在2020年12月举办工作坊。该项目得到了开放社会基金会人权倡导组织和韩国残障艺术文化中心的支持。"</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "clear"></li>
+
+				            <li class = "case"><img src="http://taeyoonchoi.com/wp-content/uploads/2016/04/day1-7852-768x512.jpg" alt="两名志愿者利用白板和屏幕向一群聋人和听力有障碍的学生讲解概念，每名学生都朝着一台电脑屏幕。"></li>
+
+              			    <li class = "case"><p class = "subtitle">场馆和日期</p><p>&#x1F4CD; WRIC，纽约市，美国和首尔美术馆，韩国首尔。</p><p>共5节课，每节课23小时</p></li>  				
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">参与者</p><p>年龄在1050岁之间，生活在纽约市的聋人和听力有障碍的学生。
+				            </p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">难度级别</p><p>初级</p></li>		
+				            
+				            <li class = "clear"></li>
+				            <li class = "case"><p class = "subtitle">目标</p><p>帮助聋人和听力障碍的学生通过有趣的练习学习计算机编程。制作基本编程概念的ASL教程。</p></li>
+
+				            <li class = "clear"></li>
+				            <li class = "case"><p class="subtitle">&#x1F4DD; 方法和材料</p><p>我们使用 p5.js 网络编辑器和网站上的代码示例。 我们还使用了骰子、扑克牌和各种纸制工具来帮助学生学习编程概念。</p><p>&#x1F517; <a href="http://taeyoonchoi.com/soft-care/signing-coders/">教学大纲和材料</a></p><p>&#x1F4F8; <a href="http://taeyoonchoi.com/soft-care/signing-coders/signing-coders-1/">更多照片</a></p></li>
+
+							<li class = "clear"></li>
+				            <li class = "case"><label>性别</label><label>种族和民族</label><label>语言</label><label>神经类型</label><label>能力</label><label>阶级</label><label>技能水平</label></li>
+				         
+
+
+				            </ul>
+				        
+				        </div> 
+			            <div class="modal-footer"></div>
+			        
+				  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+			</div> <!--modal boxes end-->
+
+			
+			
+
+	</section>
+
+
+	<!--modal-->
+
+
+    
+    <footer>
+        <h2 class="sr-only">归功于</h2>
+        <ul id="footer-menu-socials" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">论坛</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+    
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="/zh-Hans/">主页</a></li>
+          <li><a href="https://editor.p5js.org">编辑器</a></li>
+          <li><a href="/zh-Hans/download/">下载</a></li>
+          <li><a href="/zh-Hans/download/support.html">捐赠</a></li>
+          <li><a href="/zh-Hans/get-started/">入门</a></li>
+          <li><a href="/zh-Hans/reference/">参考文献</a></li>
+          <li><a href="/zh-Hans/libraries/">程式库</a></li>
+          <li><a href="/zh-Hans/learn/">学习</a></li>
+          <li><a href="/zh-Hans/teach/">教学</a></li>
+          <li><a href="/zh-Hans/examples/">范例</a></li>
+          <li><a href="https://p5js.org/contributor-docs/#/">贡献</a></li>
+          <li><a href="/zh-Hans/books/">书籍</a></li>
+          <li><a href="/zh-Hans/community/">社群</a></li>
+          <li><a href="https://showcase.p5js.org">案例展示</a></li>
+        </ul>  
+        
+        <p>
+            p5.js 目前由<a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a>领导，原创者为<a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>。p5.js 是在<a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a>和<a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>的支持下由其合作社群所开发。形象及平面设计<a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>。<a href="/zh-Hans/copyright.html">&copy; 版权信息</a>。
+        </p>
+    </footer>
+
+  </main>
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div>
+
+
+<!--jquery script-->
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+
+
+<!--filter search-->
+
+
+<script>
+    $("#filters :checkbox").click(function() {
+
+       var re = new RegExp($("#filters :checkbox:checked").map(function() {
+                              return this.value;
+                           }).get().join("|") ); //.join("|")
+       $(".case-list").each(function() {
+          var $this = $(this);
+          $this[re.source!="" && re.test($this.attr("data-category")) ? "fadeIn" : "hide"]();
+       });
+    });
+</script>
+
+
+<!--modal box-->
+
+
+<script>
+$(document).on('click','.caseBtn',function(){
+	var openModal =  $(this).attr('href');
+	$('#caseModals').hide();
+	$('.modal-content').hide();
+	
+	$('#caseModals').fadeIn();
+	$(openModal).fadeIn();
+  return false;
+});
+
+$("body" ).on( "click",".close", function() {
+  	$('#caseModals').hide();
+	$('.modal-content').hide();
+});
+
+</script>
+
+<!--search accordion menu-->
+
+<script>
+
+
+var acc = document.getElementsByClassName("search-filter");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+
+  });
+}
+</script>
+
+
+<!--workshop menu-->
+
+<script>
+var btn1 = document.getElementsByClassName("workshop1-btn");
+var btn2 = document.getElementsByClassName("workshop2-btn");
+var btn3 = document.getElementsByClassName("workshop3-btn");
+var banner1 = document.getElementById("banner1");
+var banner2 = document.getElementById("banner2");
+var banner3 = document.getElementById("banner3");
+var time1 = document.getElementById("time1");
+var time2 = document.getElementById("time2");
+var time3 = document.getElementById("time3");
+
+btn1[0].addEventListener("click", function() {
+  	this.className += " active";
+	btn2[0].className = btn2[0].className.replace(" active","");
+	btn3[0].className = btn3[0].className.replace(" active","");
+	banner1.style.display = "block";
+	banner2.style.display = "none";
+	banner3.style.display = "none";
+	time1.style.display = "block";
+	time2.style.display = "none";
+	time3.style.display = "none";
+});
+
+btn2[0].addEventListener("click", function() {
+  	this.className += " active";
+	btn1[0].className = btn1[0].className.replace(" active","");
+	btn3[0].className = btn3[0].className.replace(" active","");
+	banner2.style.display = "block";
+	banner1.style.display = "none";
+	banner3.style.display = "none";
+	time2.style.display = "block";
+	time1.style.display = "none";
+	time3.style.display = "none";
+  	});
+
+btn3[0].addEventListener("click", function() {
+  	this.className += " active";
+	btn2[0].className = btn2[0].className.replace(" active","");
+	btn1[0].className = btn1[0].className.replace(" active","");
+	banner3.style.display = "block";
+	banner2.style.display = "none";
+	banner1.style.display = "none";
+	time3.style.display = "block";
+	time2.style.display = "none";
+	time1.style.display = "none";
+  	});
+
+</script>
+
+ <!--checked tag-->
+ 
+<script>
+
+$("#filters :checkbox").click(function() {
+       var re = new RegExp($("input[type='checkbox']:checked").map(function() {
+                              return this.value;
+                           }).get().join("|") ); 
+       $(".tags").each(function() {
+		  var $this = $(this);
+          if(re.source!="(?:)" && re.test($this.attr("class"))){
+			$this.addClass("selected");
+		  }else{
+			$this.removeClass("selected");
+		  };
+       });
+    });
+
+
+</script>
+
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/zh-Hans/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","es","hi","ko","zh-Hans"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>
