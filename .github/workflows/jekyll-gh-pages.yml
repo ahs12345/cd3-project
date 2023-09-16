@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
@@ -27,7 +27,12 @@ jobs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
+        branch: gh-pages
         folder: dist
+        single-commit: false
+
+    - name: Update Download page
+      run: curl https://p5js.org/download/release.php
         
   deploy:
     needs: build
@@ -38,7 +43,7 @@ jobs:
       
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: 'gh-pages'
           
