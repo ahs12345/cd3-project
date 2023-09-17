@@ -6,13 +6,20 @@ on:
       - main  
 
 jobs:
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
   build:
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-      
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -22,11 +29,6 @@ jobs:
     
     - name: Run tests 
       run: npm test
-
-    - name: Run Snyk to check for vulnerabilities
-      uses: snyk/actions/node@master
-      env:
-        SNYK_TOKEN: 7c3afaa8-94a9-4af9-b603-82ec87fd3ae3
 
     - name: Deploy to Vercel
       run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --confirm
