@@ -68,6 +68,8 @@ def get_deployment_times(info: GithubInfo) -> List[datetime]:
     return lead_times
 
 def get_test_output(info: GithubInfo) -> str:
+    #gets the output from the log of the latest run
+
     response: Response = get(
         'https://api.github.com/repos/' + info.repo_path() + '/actions/workflows/' + info.deployment_workflow_id + '/runs',
         headers=info.headers()
@@ -90,7 +92,8 @@ def get_test_output(info: GithubInfo) -> str:
 
     return merged_content
 
-def parse_test_pass_rate(log: str) -> str:
+def get_test_pass_rate(log: str) -> str:
+    #parses the log, checking for errors to calculate the pass rate
     files_pattern = re.compile(r">> (\d+) files")
     error_pattern = re.compile(r">> (\d+) errors")
 
@@ -101,10 +104,10 @@ def parse_test_pass_rate(log: str) -> str:
         return "100%"
 
     elif error_match:
-        totalFiles = 132
+        total_files = 132
         errors = int(error_match.group(1))
-        passRate = (totalFiles - errors) / totalFiles * 100
-        return str(passRate) + "%"
+        pass_rate = (total_files - errors) / total_files * 100
+        return str(pass_rate) + "%"
     
     return "0%" 
 
@@ -161,7 +164,7 @@ sast_times = get_sast_times(ghinfo)
 cvss_num = get_cvss_num(ghinfo)
 
 test_log = get_test_output(ghinfo)
-test_pass_rate = parse_test_pass_rate(test_log)
+test_pass_rate = get_test_pass_rate(test_log)
 
 print("Deployment count last 4 weeks: ", count)
 print("Deployment time of last workflow: ", lead_times[0])
