@@ -165,6 +165,7 @@ test_pass_rate = parse_test_pass_rate(test_log)
 
 print("Deployment count last 4 weeks: ", count)
 print("Deployment time of last workflow: ", lead_times[0])
+print("Test Pass Rate: ", test_pass_rate)
 print("Last SAST tool runtime: ", sast_times[0])
-print("Number of open vulnerabilities: ", cvss_num)print("Test Pass Rate: ", test_pass_rate)
+print("Number of open vulnerabilities: ", cvss_num)
 
