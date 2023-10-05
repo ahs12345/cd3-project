@@ -519,7 +519,7 @@ module.exports = function(grunt) {
     'compress',
     'htmlhint'
   ]);
-  grunt.registerTask('test', ['htmlhint']);
+  grunt.registerTask('test', ['build']);
 
   grunt.registerTask('serve', ['connect:server']);
 
