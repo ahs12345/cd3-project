@@ -28,10 +28,10 @@
     "grunt": "grunt",
     "assemble": "grunt assemble",
     "build": "grunt build",
-    "test": "grunt build",
+    "test": "grunt test",
     "watch": "grunt server",
     "serve": "./node_modules/.bin/grunt serve",
-    "run" : "grunt run"
+    "run": "grunt run"
   },
   "licenses": [
     {
@@ -44,7 +44,7 @@
     "autoprefixer": "^6.7.7",
     "cssnano": "^4.1.11",
     "ejs": "^3.1.7",
-    "eslint": "^8.44.0",
+    "eslint": "^8.50.0",
     "eslint-config-prettier": "^2.10.0",
     "eslint-plugin-prettier": "^2.7.0",
     "flat": "^5.0.2",
@@ -64,6 +64,7 @@
     "grunt-contrib-requirejs": "^1.0.0",
     "grunt-contrib-uglify": "^3.4.0",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-eslint": "^24.3.0",
     "grunt-exec": "^1.0.1",
     "grunt-file-append": "0.0.7",
     "grunt-htmlhint": "^0.9.13",

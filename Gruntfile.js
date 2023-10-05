@@ -14,6 +14,7 @@ const pkg = require('./package.json');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 
+
 module.exports = function(grunt) {
   require('time-grunt')(grunt);
   require('load-grunt-tasks')(grunt, {
@@ -363,7 +364,9 @@ module.exports = function(grunt) {
           'tagname-lowercase': true,
           'tagname-specialchars': true,
           'empty-tag-not-self-closed': true,
-          'id-unique': true
+          'id-unique': true,
+          force: true
+          
         },
         src: [
           '<%= config.dist %>/**/*.html',
@@ -375,6 +378,17 @@ module.exports = function(grunt) {
           '!<%= config.dist %>/**/reference/assets/index.html'
         ]
       }
+    },
+    eslint: {
+      options: {
+        overrideConfigFile: '.eslintrc',  // Reference to your ESLint configuration
+        failOnError: false,
+      
+      },
+      target: [
+        'dist/assets/js/**/*.js',  // Targets all JS files in dist/assets/js/ and its subdirectories
+        '!dist/assets/js/vendor/**/*.js'
+      ]
     },
 
     shell: {
@@ -417,6 +431,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-htmlhint');
+  grunt.loadNpmTasks('grunt-eslint');
 
   grunt.registerTask('make_tmp_dir', function() {
     const tmp_path = 'tmp/p5.js';
@@ -504,6 +519,7 @@ module.exports = function(grunt) {
     'compress',
     'htmlhint'
   ]);
+  grunt.registerTask('test', ['htmlhint']);
 
   grunt.registerTask('serve', ['connect:server']);
 

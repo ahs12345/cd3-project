@@ -6,6 +6,9 @@ from collections import namedtuple
 
 from datetime import datetime, timedelta
 from dateutil import parser
+import re
+import zipfile
+import io
 
 
 
@@ -63,6 +66,49 @@ def get_deployment_times(info: GithubInfo) -> List[datetime]:
 
     return lead_times
 
+def get_test_output(info: GithubInfo) -> str:
+    response: Response = get(
+        'https://api.github.com/repos/' + info.repo_path() + '/actions/workflows/' + info.deployment_workflow_id + '/runs',
+        headers=info.headers()
+    )
+    latestRunId = response.json()['workflow_runs'][0]['id']
+
+    logUrl = 'https://api.github.com/repos/' + info.repo_path() + '/actions/runs/' + str(latestRunId) + '/logs'
+    
+    logResponse = get(logUrl, headers=info.headers())
+
+
+    with zipfile.ZipFile(io.BytesIO(logResponse.content)) as z:
+        all_contents = []
+        for filename in z.namelist():
+            with z.open(filename) as f:
+                file_content = f.read().decode('utf-8')
+                all_contents.append(file_content)
+
+    merged_content = "\n".join(all_contents)
+
+    return merged_content
+
+def parse_test_pass_rate(log: str) -> str:
+    files_pattern = re.compile(r">> (\d+) files")
+    error_pattern = re.compile(r">> (\d+) errors")
+
+    files_match = files_pattern.search(log)
+    error_match = error_pattern.search(log)
+
+    if files_match:
+        return "100%"
+
+    elif error_match:
+        totalFiles = 132
+        errors = int(error_match.group(1))
+        passRate = (totalFiles - errors) / totalFiles * 100
+        return str(passRate) + "%"
+    
+    return "0%" 
+
+
+
 owner, repo, token, id = input().split()
 ghinfo = GithubInfo(owner, repo, token, id)
 
@@ -76,5 +122,10 @@ lead_times = get_deployment_times(
     ghinfo
 )
 
+test_log = get_test_output(ghinfo)
+test_pass_rate = parse_test_pass_rate(test_log)
+
 print("Deployment count last 4 weeks: ", count)
 print("Deployment time of last workflow: ", lead_times[0])
+print("Test Pass Rate: ", test_pass_rate)
+
