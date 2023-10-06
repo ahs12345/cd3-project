@@ -20,4 +20,6 @@ jobs:
       run: npm ci
     - name: Run tests
       run: npm test
+    - name: Deploy to Vercel
+      run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --confirm
       
