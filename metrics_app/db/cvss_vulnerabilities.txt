@@ -1,0 +1,1 @@
+{"timestamp": "2023-10-08T12:41:53.051819", "data": {"none": 0, "low": 0, "medium": 93, "high": 26, "critical": 0}}

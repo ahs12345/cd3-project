@@ -33,3 +33,6 @@ dist/*
 !dist/download/release.php
 !dist/books/media.zip
 !dist/learn/books/media.zip
+
+metrics_app/user.cfg
+metrics_app/__pycache__/*
