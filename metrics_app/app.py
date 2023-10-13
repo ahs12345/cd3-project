@@ -4,36 +4,77 @@ from graphs import *
 
 from app_backend import *
 
+import time
+
+from threading import Thread
+import queue
+
 graphs = []
 
-def refresh():
-    global graphs
-    global reload_button
-    global reload_label
-
-    reload_button.configure(text='Reloading...')
-    reload_metrics()
-    for g in graphs:
-        g.refresh()
-    
-
-    reload_button.configure(text='Reload')
-    reload_label.configure(text=f'Last updated: {get_last_reload()}')
+request_queue =  queue.Queue()
+response_queue = queue.Queue()
 
 
-root = CTk()
-root.geometry('1000x800')
+def submit_request(callable, *args, **kwargs):
+    request_queue.put((callable, args, kwargs))
 
-root.title('CI Pipeline Analysis Tool')
+def app():
+    def send_reload_request():
+        nonlocal reload_button
+        reload_button.configure(text='Reloading...')
+        submit_request(reload_metrics)
 
-reload_button = CTkButton(master=root, text='Reload', command=refresh)
-reload_label = CTkLabel(master=root, text=f'Last updated: {get_last_reload()}')
+    def handle_reload_response():
+        nonlocal reload_button
+        nonlocal reload_label
+        global graphs
 
-reload_button.pack(side=tkinter.BOTTOM, pady=10)
-reload_label.pack(side=tkinter.BOTTOM)
+        for g in graphs:
+            g.refresh()
 
-dt_fig = DeploymentTime(timedelta(days=1), root)
-dt_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
-graphs.append(dt_fig)
+        reload_button.configure(text='Reload')
+        reload_label.configure(text=f'Last updated: {get_last_reload()}')
 
-root.mainloop()
+    def tick():
+        try:
+            ob = response_queue.get_nowait()
+        except:
+            pass
+        else:
+            handle_reload_response()
+        
+        root.after(250, tick)
+
+    root = CTk()
+    root.geometry('1000x800')
+
+    root.title('CI Pipeline Analysis Tool')
+
+    reload_button = CTkButton(master=root, text='Reload', command=send_reload_request)
+    reload_label = CTkLabel(master=root, text=f'Last updated: {get_last_reload()}')
+
+    reload_button.pack(side=tkinter.BOTTOM, pady=10)
+    reload_label.pack(side=tkinter.BOTTOM)
+
+    dt_fig = DeploymentTime(timedelta(days=1), root)
+    dt_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+    graphs.append(dt_fig)
+    tick()
+    root.mainloop()
+
+if __name__ == "__main__":
+    thr = Thread(target = app)
+    thr.start()
+
+    while 1:
+        try:
+            callable, args, kwargs = request_queue.get_nowait()
+        except queue.Empty:
+            pass
+        else:
+            print("Reloading metrics...")
+            retval = callable(*args, **kwargs)
+            response_queue.put(retval)
+            print("Done!")
+
+        time.sleep(0.2)
