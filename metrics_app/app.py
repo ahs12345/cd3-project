@@ -56,9 +56,18 @@ def app():
     reload_button.pack(side=tkinter.BOTTOM, pady=10)
     reload_label.pack(side=tkinter.BOTTOM)
 
-    dt_fig = DeploymentTime(timedelta(days=1), root)
+    tabview = CTkTabview(root, height=root._max_height, width=root._max_width)
+    tabview.pack(padx=20, pady=20)
+    tabview.add("Deployment Times")
+    tabview.add("Test Pass Rate")
+    tabview.add("Vulnerabilities based on CVSS")
+    dt_fig = DeploymentTime(timedelta(days=1), tabview.tab("Deployment Times"))
+    tp_fig = TestRate(timedelta(days=1), tabview.tab("Test Pass Rate"))
+
     dt_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+    tp_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
     graphs.append(dt_fig)
+    graphs.append(tp_fig)
     tick()
     root.mainloop()
 

@@ -24,7 +24,7 @@ def aggregate_deployment_time(duration: timedelta, deployment_times: List[Tuple[
     )
 
     # return averages
-    return [int(sum / tally) for sum, tally in zip(aggregate_sum, aggregate_tally)]
+    return [int(sum / tally) if tally > 0 else None for sum, tally in zip(aggregate_sum, aggregate_tally)]
 
 def aggregate_test_results(duration: timedelta, test_results: List[Tuple[datetime, float]]) -> List[float]:
     aggregate_tally = aggregate_deployment_freqency(duration, test_results)
@@ -34,22 +34,44 @@ def aggregate_test_results(duration: timedelta, test_results: List[Tuple[datetim
         0.0,
         lambda a, b: a + b
     )
-    return [sum / float(tally) for sum, tally in zip(aggregate_sum, aggregate_tally)]
+    return [sum / float(tally) if tally > 0 else None for sum, tally in zip(aggregate_sum, aggregate_tally)]
 
 
 
 def aggregate_cvss_vulnerabilities(duration: timedelta, datapoints) -> List[Dict[str, int]]:
+    aggregate_tally = aggregate_deployment_freqency(duration, datapoints)
+    aggregate_sum = __aggregate_metric_over_duration(
+        duration,
+        datapoints,
+        {"none": 0, "low": 0, "medium": 0, "high": 0, "critical": 0},
+        __merge_dict
+    )
+
+    dict3 = {"none": [], "low": [], "medium": [], "high": [], "critical": []}
+    print(aggregate_sum)
     pass
 
 def __aggregate_metric_over_duration(duration: timedelta, collection: List, default, operation: Callable) -> List:
     out: List = [default]
-    until = (collection[0][0] - duration) if len(collection) > 0 else None
-
+    until = datetime.combine(collection[0][0] - duration, time.max) if len(collection) > 0 else None
+    
     for entry in collection:
         if entry[0] > until:
             out[-1] = operation(out[-1], entry[1])
         else:
-            until = entry[0] - duration
+            new_until = datetime.combine(entry[0] - duration, time.max)
+            diff = until - new_until
+            while (diff > duration):
+                out.append(default)
+                diff -= duration
+
+            until = new_until
             out.append(operation(default, entry[1]))
-    
     return out
+
+#takes sum number of vulnerabilities for each day
+def __merge_dict(dict1, dict2):
+    for key in dict1:
+        dict1[key] += dict2[key]
+    
+    return dict1

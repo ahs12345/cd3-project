@@ -4,7 +4,7 @@ from requests import Response, get
 
 from collections import namedtuple
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 from dateutil import parser
 import re
 import zipfile
