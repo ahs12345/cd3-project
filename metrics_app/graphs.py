@@ -26,6 +26,7 @@ class Graph:
     def refresh(self):
 
         self.ax.clear()
+        maxlen_y = 0
 
         for key in self.data:
             y = self.aggregate_function(self.duration, self.data[key])
@@ -36,11 +37,15 @@ class Graph:
             x.reverse()
             x_ticks.reverse()
 
+            if len(y) > maxlen_y:
+                self.ax.set_xticks(x)
+                self.ax.set_xticklabels(x_ticks)
+                
+                maxlen_y = len(y)
+
             self.ax.plot(x, y, label=key, marker='o')
 
         self.ax.set_xlabel(self.xlabel)
-        self.ax.set_xticks(x)
-        self.ax.set_xticklabels(x_ticks)
         self.ax.set_ylabel(self.ylabel)
         self.ax.grid(True)
         self.ax.legend()
@@ -50,8 +55,8 @@ class Graph:
 class DeploymentTime(Graph):
     def data_config(self):
         self.data = {
-            "SAST Run Time": load_sast_times(),
-            "Lead Time": load_deployment_times()
+            "Lead Time": load_deployment_times(),
+            "SAST Run Time": load_sast_times()
         }
 
         self.xlabel = 'Date'
