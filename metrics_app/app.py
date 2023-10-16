@@ -71,10 +71,7 @@ def app():
     tick()
     root.mainloop()
 
-if __name__ == "__main__":
-    thr = Thread(target = app)
-    thr.start()
-
+def backgrounf_func():
     while 1:
         try:
             callable, args, kwargs = request_queue.get_nowait()
@@ -87,3 +84,10 @@ if __name__ == "__main__":
             print("Done!")
 
         time.sleep(0.2)
+
+if __name__ == "__main__":
+    app_thread = Thread(target=backgrounf_func)  # Define your background tasks in this function
+    app_thread.start()
+    app()
+
+
