@@ -119,7 +119,7 @@ def fetch():
 
     sast_times = get_sast_times(ghinfo)
 
-    # cvss_num = get_cvss_num(ghinfo)
+    cvss_num = get_cvss_num(ghinfo)
 
     test_pass_rate = get_test_pass_rate(ghinfo)
 
@@ -127,7 +127,7 @@ def fetch():
     print("Deployment time of last workflow: ", lead_times[0])
     print("Test Pass Rate: ", test_pass_rate)
     print("Last SAST tool runtime: ", sast_times[0])
-    # print("Number of open vulnerabilities: ", cvss_num)
+    print("Number of open vulnerabilities: ", cvss_num)
 
 
 if __name__ == "__main__":

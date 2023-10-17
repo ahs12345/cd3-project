@@ -2,7 +2,7 @@ from io_metrics import *
 from config import *
 from typing import Callable
 
-def aggregate_deployment_freqency(duration: timedelta, deployment_times: List[Tuple[datetime, int]]) -> List[int]:
+def aggregate_deployment_freqency(duration: timedelta, deployment_times: List[Tuple[datetime, float]]) -> List[int]:
     # Aggregate our deployment times into deployment freqency over time, grouping by 'duration'.
     # out[0] is past duration, out[1] is 1 duration ago, etc
     return __aggregate_metric_over_duration(
@@ -34,6 +34,7 @@ def aggregate_test_results(duration: timedelta, test_results: List[Tuple[datetim
         0.0,
         lambda a, b: a + b
     )
+
     return [sum / float(tally) if tally > 0 else None for sum, tally in zip(aggregate_sum, aggregate_tally)]
 
 
@@ -47,14 +48,20 @@ def aggregate_cvss_vulnerabilities(duration: timedelta, datapoints) -> List[Dict
         __merge_dict
     )
 
-    dict3 = {"none": [], "low": [], "medium": [], "high": [], "critical": []}
-    print(aggregate_sum)
-    pass
+    out = []
+    for dict, tally in zip(aggregate_sum, aggregate_tally):
+
+        if tally > 0:
+            new_dict = {key: (value / tally) for key, value in dict.items()}
+            out.append(new_dict)
+        else:
+            out.append(None)
+
+    return out
 
 def __aggregate_metric_over_duration(duration: timedelta, collection: List, default, operation: Callable) -> List:
     out: List = [default]
     until = datetime.combine(collection[0][0] - duration, time.max) if len(collection) > 0 else None
-    
     for entry in collection:
         if entry[0] > until:
             out[-1] = operation(out[-1], entry[1])

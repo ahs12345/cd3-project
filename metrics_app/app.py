@@ -46,7 +46,7 @@ def app():
         root.after(250, tick)
 
     root = CTk()
-    root.geometry('1000x800')
+    root.geometry('1500x1000')
 
     root.title('CI Pipeline Analysis Tool')
 
@@ -55,19 +55,27 @@ def app():
 
     reload_button.pack(side=tkinter.BOTTOM, pady=10)
     reload_label.pack(side=tkinter.BOTTOM)
+  
 
     tabview = CTkTabview(root, height=root._max_height, width=root._max_width)
-    tabview.pack(padx=20, pady=20)
+    tabview.pack(fill=tkinter.Y, expand=True, padx=20, pady=0)
+
+    
     tabview.add("Deployment Times")
     tabview.add("Test Pass Rate")
     tabview.add("Vulnerabilities based on CVSS")
     dt_fig = DeploymentTime(timedelta(days=1), tabview.tab("Deployment Times"))
     tp_fig = TestRate(timedelta(days=1), tabview.tab("Test Pass Rate"))
+    cvss_fig = CvssNum(timedelta(days=1), tabview.tab("Vulnerabilities based on CVSS"))
 
-    dt_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
-    tp_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+
+    dt_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1, padx=10, pady=5) 
+    tp_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1, padx=10, pady=5) 
+    cvss_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+
     graphs.append(dt_fig)
     graphs.append(tp_fig)
+    graphs.append(cvss_fig)
     tick()
     root.mainloop()
 

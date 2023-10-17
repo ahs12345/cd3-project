@@ -34,6 +34,7 @@ def load_test_pass_rates() -> List[Tuple[datetime, float]]:
                 datetime.fromisoformat(ob['timestamp']),
                 float(ob['result'])
             ))
+    datapoints.reverse()
     return datapoints
 
 def save_cvss_vulnerabilities(data: Dict[str, int]):
@@ -53,6 +54,7 @@ def load_cvss_vulnerabilities() -> List[Tuple[datetime, Dict[str, int]]]:
                 datetime.fromisoformat(ob['timestamp']),
                 ob['data']
             ))
+    datapoints.reverse()
     return datapoints
 
 
@@ -64,7 +66,6 @@ def __save_time_entries(fpath: str, time_entries: List[Tuple[datetime, int]]):
         })
         for e in time_entries
     ]
-
     with open(fpath, 'w') as f:
         for ln in lns:
             f.write(ln + '\n')

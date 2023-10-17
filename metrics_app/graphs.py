@@ -27,9 +27,12 @@ class Graph:
 
         self.ax.clear()
         maxlen_y = 0
-
         for key in self.data:
+
             y = self.aggregate_function(self.duration, self.data[key])
+            #print(key)
+            print("Y EQUALS = ", y)
+            #print(self.data)
             y.reverse()
 
             x = [(self.data[key][0][0] - (self.duration * i)) for i in range(len(y))]
@@ -44,7 +47,7 @@ class Graph:
                 maxlen_y = len(y)
 
             self.ax.plot(x, y, label=key, marker='o')
-
+        
         self.ax.set_xlabel(self.xlabel)
         self.ax.set_ylabel(self.ylabel)
         self.ax.grid(True)
@@ -58,10 +61,11 @@ class DeploymentTime(Graph):
             "Lead Time": load_deployment_times(),
             "SAST Run Time": load_sast_times()
         }
-
         self.xlabel = 'Date'
         self.ylabel = 'Time (seconds)'
 
+        self.ax.tick_params(axis='x', rotation=90)
+        self.ax.tick_params(axis='x', labelsize=6) 
         self.aggregate_function = aggregate_deployment_time
 
 class TestRate(Graph):
@@ -69,10 +73,11 @@ class TestRate(Graph):
         self.data = {
             "Test Pass Rate": load_test_pass_rates()
         }
-
         self.xlabel = 'Date'
         self.ylabel = 'Test pass rate (%)'
-
+        
+        self.ax.tick_params(axis='x', rotation=90)
+        self.ax.tick_params(axis='x', labelsize=6) 
         self.aggregate_function = aggregate_test_results
 
 class CvssNum(Graph):
@@ -84,4 +89,44 @@ class CvssNum(Graph):
         self.xlabel = 'Date'
         self.ylabel = 'Number of vulnerabilities'
 
+        self.ax.tick_params(axis='x', rotation=90)
+        self.ax.tick_params(axis='x', labelsize=6) 
         self.aggregate_function = aggregate_cvss_vulnerabilities
+    
+    def refresh(self):
+        self.ax.clear()
+        maxlen_y = 0
+        for key in self.data:
+
+            y = self.aggregate_function(self.duration, self.data[key])
+            #print(key)
+            #print("Y EQUALS = ", y)
+            #print(self.data)
+            y.reverse()
+
+            x = [(self.data[key][0][0] - (self.duration * i)) for i in range(len(y))]
+            x_ticks = [(self.data[key][0][0] - (self.duration * i)).strftime('%d/%m') for i in range(len(y))]
+            x.reverse()
+            x_ticks.reverse()
+
+            cvss_cats = ['none', 'low', 'medium', 'high', 'critical']
+
+
+            new_y_data = {category: [entry[category] if entry is not None else None for entry in y] for category in cvss_cats}
+            print(new_y_data)
+
+            if len(y) > maxlen_y:
+                self.ax.set_xticks(x)
+                self.ax.set_xticklabels(x_ticks)
+                
+                maxlen_y = len(y)
+
+            for category, values in new_y_data.items():
+                self.ax.plot(x, values, label=category, marker='o',)
+        
+        self.ax.set_xlabel(self.xlabel)
+        self.ax.set_ylabel(self.ylabel)
+        self.ax.grid(True)
+        self.ax.legend()
+
+        self.canvas.draw()
