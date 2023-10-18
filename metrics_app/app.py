@@ -64,18 +64,24 @@ def app():
     tabview.add("Deployment Times")
     tabview.add("Test Pass Rate")
     tabview.add("Vulnerabilities based on CVSS")
+    tabview.add("Cvss Vulnerabilities by deployment frequency") 
+
     dt_fig = DeploymentTime(timedelta(days=1), tabview.tab("Deployment Times"))
     tp_fig = TestRate(timedelta(days=1), tabview.tab("Test Pass Rate"))
     cvss_fig = CvssNum(timedelta(days=1), tabview.tab("Vulnerabilities based on CVSS"))
+    cvss_deployment = CvssDeployment(timedelta(days=1), tabview.tab("Cvss Vulnerabilities by deployment frequency"))
 
 
-    dt_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1, padx=10, pady=5) 
-    tp_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1, padx=10, pady=5) 
+    dt_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1) 
+    tp_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1) 
     cvss_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+    cvss_deployment.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+
 
     graphs.append(dt_fig)
     graphs.append(tp_fig)
     graphs.append(cvss_fig)
+    graphs.append(cvss_deployment)
     tick()
     root.mainloop()
 

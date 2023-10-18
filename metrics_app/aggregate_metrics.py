@@ -1,6 +1,7 @@
 from io_metrics import *
 from config import *
 from typing import Callable
+from collections import defaultdict
 import copy
 
 
@@ -39,7 +40,35 @@ def aggregate_test_results(duration: timedelta, test_results: List[Tuple[datetim
 
     return [sum / float(tally) if tally > 0 else None for sum, tally in zip(aggregate_sum, aggregate_tally)]
 
+def aggregate_cvvs_deployment(datapoints):
+    deployments_per_date = defaultdict(int)
+    for element in datapoints:
+        date = element[0].date()
+        deployments_per_date[date] += 1
+    
+    #print(deployments_per_date)
+    frequency_dict = defaultdict(list)
+    for element in datapoints:
+        date = element[0].date()
+        frequency = deployments_per_date[date]
+        frequency_dict[frequency].append(element[1])
+    
+    
+    avg_frequency_dict = {}
 
+    for frequency, cvss_data_list in frequency_dict.items():
+        sum_dict = {'none': 0, 'low': 0, 'medium': 0, 'high': 0, 'critical': 0}
+        
+        for cvss_data in cvss_data_list:
+            for key in sum_dict.keys():
+                sum_dict[key] += cvss_data[key]
+        
+        avg_dict = {key: value / len(cvss_data_list) for key, value in sum_dict.items()}
+        
+        avg_frequency_dict[frequency] = avg_dict
+
+    #print(avg_frequency_dict)
+    return avg_frequency_dict
 
 def aggregate_cvss_vulnerabilities(duration: timedelta, datapoints) -> List[Dict[str, int]]:
     aggregate_tally = aggregate_deployment_freqency(duration, datapoints)

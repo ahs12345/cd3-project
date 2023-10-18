@@ -95,6 +95,8 @@ class TestRate(Graph):
         self.ax.tick_params(axis='x', labelsize=6) 
         self.aggregate_function = aggregate_test_results
 
+
+
 class CvssNum(Graph):
     def data_config(self):
         self.data = {
@@ -115,6 +117,7 @@ class CvssNum(Graph):
 
             y = self.aggregate_function(self.duration, self.data[key])
             y.reverse()
+            #print(y)
 
             x = [(self.data[key][0][0] - (self.duration * i)) for i in range(len(y))]
             x_ticks = [(self.data[key][0][0] - (self.duration * i)).strftime('%d/%m') for i in range(len(y))]
@@ -150,6 +153,58 @@ class CvssNum(Graph):
                     self.ax.plot(next_x_date, next_y, marker='x', label=f'{category} (predicted)')
 
         self.ax.set_xlabel(self.xlabel)
+        self.ax.set_ylabel(self.ylabel)
+        self.ax.grid(True)
+        self.ax.legend()
+        self.ax.legend(loc='best', prop={'size': 5})
+
+        self.canvas.draw()
+
+class CvssDeployment(Graph):
+    def data_config(self):
+        self.data = {
+            "cvss vuln": load_cvss_vulnerabilities()
+        }
+        #print (self.data)
+
+        self.xlabel = 'Deployment Frequency'
+        self.ylabel = 'Number of vulnerabilities'
+
+        self.ax.tick_params(axis='x', labelsize=6) 
+        self.aggregate_function = aggregate_cvvs_deployment
+    
+    def refresh(self):
+        self.ax.clear()
+        for key in self.data:
+
+            avg_frequency_dict = self.aggregate_function(self.data[key])
+            x_vals = sorted(avg_frequency_dict.keys())
+            #print(avg_frequency_dict)
+
+            x_ticks = [(i+1) for i in range (x_vals[-1])]
+            #print(x_ticks)
+
+            cvss_cats = ['none', 'low', 'medium', 'high', 'critical']
+
+            print(x_vals)
+
+            for cat in cvss_cats:
+                y_values = [avg_frequency_dict[frequency][cat] for frequency in x_vals]
+                print(y_values)
+                self.ax.plot(x_vals, y_values, marker='o', label=cat)
+
+                if len(x_vals) > 2 and len(y_values) > 2:
+                    coefficients = np.polyfit(x_vals, y_values, 1)
+                    polynomial = np.poly1d(coefficients)
+
+                    next_x = x_vals[-1] + 1
+                    next_y = polynomial(next_x)
+
+                    self.ax.plot(next_x, next_y, marker='x', label=f'{cat} (predicted)')
+
+
+        self.ax.set_xlabel(self.xlabel)
+        self.ax.set_xticks(x_ticks)
         self.ax.set_ylabel(self.ylabel)
         self.ax.grid(True)
         self.ax.legend()
