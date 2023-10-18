@@ -167,7 +167,7 @@ class CvssDeployment(Graph):
         }
         #print (self.data)
 
-        self.xlabel = 'Deployment Frequency'
+        self.xlabel = 'Deployment Frequency (Deployments per day)'
         self.ylabel = 'Number of vulnerabilities'
 
         self.ax.tick_params(axis='x', labelsize=6) 
