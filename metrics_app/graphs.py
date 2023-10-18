@@ -4,6 +4,9 @@ from get_metrics import *
 
 import tkinter
 from customtkinter import *
+import matplotlib.dates as mdates
+import numpy as np
+
 
 from matplotlib.backends.backend_tkagg import (
     FigureCanvasTkAgg
@@ -24,15 +27,11 @@ class Graph:
         pass
 
     def refresh(self):
-
         self.ax.clear()
         maxlen_y = 0
-        for key in self.data:
 
+        for key in self.data:
             y = self.aggregate_function(self.duration, self.data[key])
-            #print(key)
-            print("Y EQUALS = ", y)
-            #print(self.data)
             y.reverse()
 
             x = [(self.data[key][0][0] - (self.duration * i)) for i in range(len(y))]
@@ -40,20 +39,36 @@ class Graph:
             x.reverse()
             x_ticks.reverse()
 
+            date_number = mdates.date2num(x)
+
+            x_clean = [x for x, y in zip(date_number, y) if y is not None]
+            y_clean = [y for y in y if y is not None]
+
+            if len(y) > 2:
+                coefficients = np.polyfit(x_clean, y_clean, 1)
+                polynomial = np.poly1d(coefficients)
+
+                last_date = x[-1]
+                next_x_date = last_date + timedelta(days=1)
+                next_x = mdates.date2num(next_x_date)
+                next_y = polynomial(next_x)
+                self.ax.plot(x, y, label=key, marker='o')
+                self.ax.plot(next_x_date, next_y, marker='x', label=f'{key} (predicted)')
+            else:
+                self.ax.plot(x, y, label=key, marker='o')
+
             if len(y) > maxlen_y:
                 self.ax.set_xticks(x)
                 self.ax.set_xticklabels(x_ticks)
-                
                 maxlen_y = len(y)
 
-            self.ax.plot(x, y, label=key, marker='o')
-        
         self.ax.set_xlabel(self.xlabel)
         self.ax.set_ylabel(self.ylabel)
         self.ax.grid(True)
         self.ax.legend()
-
+        self.ax.legend(loc='best', prop={'size': 5})
         self.canvas.draw()
+
 
 class DeploymentTime(Graph):
     def data_config(self):
@@ -99,9 +114,6 @@ class CvssNum(Graph):
         for key in self.data:
 
             y = self.aggregate_function(self.duration, self.data[key])
-            #print(key)
-            #print("Y EQUALS = ", y)
-            #print(self.data)
             y.reverse()
 
             x = [(self.data[key][0][0] - (self.duration * i)) for i in range(len(y))]
@@ -111,22 +123,36 @@ class CvssNum(Graph):
 
             cvss_cats = ['none', 'low', 'medium', 'high', 'critical']
 
-
             new_y_data = {category: [entry[category] if entry is not None else None for entry in y] for category in cvss_cats}
-            print(new_y_data)
 
             if len(y) > maxlen_y:
                 self.ax.set_xticks(x)
                 self.ax.set_xticklabels(x_ticks)
-                
                 maxlen_y = len(y)
 
+            date_number = mdates.date2num(x)
+
             for category, values in new_y_data.items():
+                x_clean = [x for x, y in zip(date_number, values) if y is not None]
+                y_clean = [y for y in values if y is not None]
+
                 self.ax.plot(x, values, label=category, marker='o',)
-        
+
+                if len(y_clean) > 2:
+                    coefficients = np.polyfit(x_clean, y_clean, 1)
+                    polynomial = np.poly1d(coefficients)
+
+                    last_date = x[-1]
+                    next_x_date = last_date + timedelta(days=1)
+                    next_x = mdates.date2num(next_x_date)
+                    next_y = polynomial(next_x)
+
+                    self.ax.plot(next_x_date, next_y, marker='x', label=f'{category} (predicted)')
+
         self.ax.set_xlabel(self.xlabel)
         self.ax.set_ylabel(self.ylabel)
         self.ax.grid(True)
         self.ax.legend()
+        self.ax.legend(loc='best', prop={'size': 5})
 
         self.canvas.draw()
