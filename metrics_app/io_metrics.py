@@ -43,7 +43,7 @@ def save_cvss_vulnerabilities(data: Dict[str, int]):
         'data' : data
     })
     with open('db/cvss_vulnerabilities.txt', 'a') as f:
-        f.write(ln + '\n')
+        f.write('\n' + ln)
 
 def load_cvss_vulnerabilities() -> List[Tuple[datetime, Dict[str, int]]]:
     datapoints: List[Tuple[datetime, Dict[str, int]]] = []

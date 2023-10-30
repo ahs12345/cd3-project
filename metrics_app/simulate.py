@@ -7,7 +7,7 @@ import statistics
 
 from typing import List
 
-DAY_DURATION = 24 * 60
+DAY_DURATION = 24 * 60 * 60
 SIM_DAYS = 10
 
 NUM_GITHUB_RUNNERS = 1

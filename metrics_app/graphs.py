@@ -15,16 +15,20 @@ from matplotlib.pyplot import Figure
 import matplotlib
 
 class Graph:
-    def __init__(self, duration: timedelta, root):
+    def __init__(self, title: str, duration: timedelta, root):
+        self.title = title
         self.duration = duration
         self.fig = matplotlib.pyplot.figure(figsize=(5, 4))
         self.ax = self.fig.add_subplot()
         self.canvas = FigureCanvasTkAgg(self.fig, master=root)
-        self.data_config()
-        self.refresh()
+        self.do_refresh()
 
     def data_config(self):
         pass
+
+    def do_refresh(self):
+        self.data_config()
+        self.refresh()
 
     def refresh(self):
         self.ax.clear()
@@ -62,6 +66,7 @@ class Graph:
                 self.ax.set_xticklabels(x_ticks)
                 maxlen_y = len(y)
 
+        self.ax.set_title(self.title)
         self.ax.set_xlabel(self.xlabel)
         self.ax.set_ylabel(self.ylabel)
         self.ax.grid(True)
@@ -152,6 +157,7 @@ class CvssNum(Graph):
 
                     self.ax.plot(next_x_date, next_y, marker='x', label=f'{category} (predicted)')
 
+        self.ax.set_title(self.title)
         self.ax.set_xlabel(self.xlabel)
         self.ax.set_ylabel(self.ylabel)
         self.ax.grid(True)
@@ -203,6 +209,7 @@ class CvssDeployment(Graph):
                     self.ax.plot(next_x, next_y, marker='x', label=f'{cat} (predicted)')
 
 
+        self.ax.set_title(self.title)
         self.ax.set_xlabel(self.xlabel)
         self.ax.set_xticks(x_ticks)
         self.ax.set_ylabel(self.ylabel)
