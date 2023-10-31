@@ -14,6 +14,11 @@ NUM_GITHUB_RUNNERS = 1
 
 simulated_lttc = []
 test_pass_results = []
+simulated_none = []
+simulated_low = []
+simulated_medium = []
+simulated_high = []
+simulated_crictical = []
 
 
 class Distribution:
@@ -23,7 +28,6 @@ class Distribution:
         and a discrete step size.
         """
         self.step_size = step_size
-
         max_index = 0
         dist = {0: 0}
         # Count occurences within step_size blocks
@@ -42,6 +46,7 @@ class Distribution:
             sum(self.dist[0:i+1])
             for i in range(len(self.dist))
         ]
+        print (self.dist)
 
         self.max_roll = self.dist[-1]
 
@@ -57,7 +62,6 @@ class Distribution:
                 continue
             return i * self.step_size
         
-
 class SimulationConfiguration:
     def __init__(self, 
         sast_configuration: str,
@@ -65,6 +69,11 @@ class SimulationConfiguration:
         pipeline_delay: Distribution,
         sast_runtime: Distribution,
         test_dist: Distribution,
+        none_dist: Distribution,
+        low_dist: Distribution,
+        medium_dist: Distribution,
+        high_dist: Distribution,
+        critical_dist: Distribution,
         commits_per_day: int
     ):
         """
@@ -79,6 +88,11 @@ class SimulationConfiguration:
         self.pipeline_delay = pipeline_delay
         self.sast_runtime = sast_runtime
         self.test_dist = test_dist
+        self.none_dist = none_dist
+        self.low_dist = low_dist
+        self.medium_dist = medium_dist
+        self.high_dist = high_dist
+        self.critical_dist = critical_dist
         self.commits_per_day = commits_per_day
 
 
@@ -117,7 +131,7 @@ class Pipeline:
                 yield depl
                 yield self.env.timeout(self.conf.pipeline_delay.sample())
         self.did_tests_pass()
-
+        self.calculate_cvss()
     
     def par_deploy(self, commit: int):
         def run_sast():
@@ -138,10 +152,22 @@ class Pipeline:
         ])
 
         self.did_tests_pass()
+        self.calculate_cvss()
 
     def did_tests_pass(self):
         """Simulate if the test passed based on the test pass rate distribution."""
         test_pass_results.append(random.randint(1, 100) <= self.conf.test_dist.sample())
+    
+    def calculate_cvss(self):
+        """Simulate the CVSS score of the commit based on the CVSS distribution."""
+
+        simulated_none.append(self.conf.none_dist.sample())
+        simulated_low.append(self.conf.low_dist.sample())
+        simulated_medium.append(self.conf.medium_dist.sample())
+        simulated_high.append(self.conf.high_dist.sample())
+        simulated_crictical.append(self.conf.critical_dist.sample())
+
+        
 
 
 
@@ -177,6 +203,9 @@ def __run_sim(env: simpy.Environment, conf: SimulationConfiguration):
         env.process(commit_to_pipeline(env, commit, pipeline))
     
 
+def simulatedCvssResults():
+    #print("none", simulated_none, "low", simulated_low, "medium", simulated_medium, "high", simulated_high, "critical", simulated_crictical)
+    return 0, math.floor(sum(simulated_low) / len(simulated_low)), math.floor(sum(simulated_medium) / len(simulated_medium)), math.floor(sum(simulated_high) / len(simulated_high)), math.floor(sum(simulated_crictical) / len(simulated_crictical))
 
 def simulate(conf: SimulationConfiguration):
     global simulated_lttc, test_pass_results
@@ -186,7 +215,8 @@ def simulate(conf: SimulationConfiguration):
     env.run(until=DAY_DURATION * SIM_DAYS)
 
     test_pass_rate = (sum(test_pass_results) / len(test_pass_results)) * 100
-    return statistics.mean(simulated_lttc), math.ceil(len(simulated_lttc) / SIM_DAYS), test_pass_rate
+    none, low, medium, high, crtical = simulatedCvssResults()
+    return statistics.mean(simulated_lttc), math.ceil(len(simulated_lttc) / SIM_DAYS), test_pass_rate, none, low, medium, high, crtical
 
 
 

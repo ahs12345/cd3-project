@@ -56,7 +56,8 @@ def app():
                 text=f"Simulation Results:\n" +
                      f"Lead Time to Changes: {math.floor(param[1])}\n" +
                      f"Deployment Frequency: {param[2]}\n" +
-                     f"Test Pass Rate: {param[3]:.2f}%"
+                     f"Test Pass Rate: {param[3]:.2f}%\n" +
+                     f"CVSS vulerabilities: none:{param[4]} low:{param[5]} medium:{param[6]} high:{param[7]} critical:{param[8]}"
             )
             print(param)
 
@@ -89,11 +90,13 @@ def app():
 
     perf_tab = tabview.add("Pipeline Performance")
     qual_tab = tabview.add("Code Quality")
+    cvss_deployment = tabview.add("CVSS Vulnerabilities based on Deployment Frequency")
+
 
     dt_fig = DeploymentTime("Deployment Times", timedelta(days=1), perf_tab)
     tp_fig = TestRate("Test Pass Rate", timedelta(days=1), qual_tab)
     cvss_fig = CvssNum("CVSS Vulnerability Count", timedelta(days=1), qual_tab)
-    cvss_deployment = CvssDeployment("CVSS Vulnerabilities based on Deployment Frequency", timedelta(days=1), qual_tab)
+    cvss_deployment = CvssDeployment("CVSS Vulnerabilities based on Deployment Frequency", timedelta(days=1), cvss_deployment)
 
 
     dt_fig.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1) 
