@@ -32,18 +32,23 @@ def simulate_pipeline(commits, conf):
 
     deploy_runtimes = {x[0]: x[1] for x in load_deployment_times()}
     sast_runtimes = {x[0]: x[1] for x in load_sast_times()}
+    test_pass_rates = {x[0]: x[1] for x in load_test_pass_rates()}
+
     sast_dist = Distribution(sast_runtimes.values(), 10)
     depl_dist = Distribution(deploy_runtimes.values(), 10)
+    test_dist = Distribution(test_pass_rates.values(), 10)
+
 
     sim_conf = SimulationConfiguration(
         conf,
         2,
         depl_dist,
         sast_dist,
+        test_dist,
         int(commits)
     )
 
-    lttc, depl_freq = simulate(sim_conf)
+    lttc, depl_freq, test_pass = simulate(sim_conf)
 
 
-    return ("simulate", lttc, depl_freq)
+    return ("simulate", lttc, depl_freq, test_pass)

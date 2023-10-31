@@ -13,6 +13,7 @@ SIM_DAYS = 10
 NUM_GITHUB_RUNNERS = 1
 
 simulated_lttc = []
+test_pass_results = []
 
 
 class Distribution:
@@ -63,6 +64,7 @@ class SimulationConfiguration:
         num_runners: int,
         pipeline_delay: Distribution,
         sast_runtime: Distribution,
+        test_dist: Distribution,
         commits_per_day: int
     ):
         """
@@ -76,6 +78,7 @@ class SimulationConfiguration:
         self.num_runners = num_runners
         self.pipeline_delay = pipeline_delay
         self.sast_runtime = sast_runtime
+        self.test_dist = test_dist
         self.commits_per_day = commits_per_day
 
 
@@ -113,6 +116,8 @@ class Pipeline:
             with self.cloud_deployer.request() as depl:
                 yield depl
                 yield self.env.timeout(self.conf.pipeline_delay.sample())
+        self.did_tests_pass()
+
     
     def par_deploy(self, commit: int):
         def run_sast():
@@ -132,6 +137,13 @@ class Pipeline:
             self.env.process(run_deploy())
         ])
 
+        self.did_tests_pass()
+
+    def did_tests_pass(self):
+        """Simulate if the test passed based on the test pass rate distribution."""
+        test_pass_results.append(random.randint(1, 100) <= self.conf.test_dist.sample())
+
+
 
 
 
@@ -140,12 +152,12 @@ def commit_to_pipeline(env: simpy.Environment, commit: int, pipeline: Pipeline):
     Simulates a single commit to a pipeline
     """
 
-    global simulated_lttc
+    global simulated_lttc, test_pass_results
     # Sample our simulated LTTC
     start_time = env.now
 
     yield env.process(pipeline.deploy(commit))
-    
+
     simulated_lttc.append(env.now - start_time)
 
 
@@ -167,13 +179,16 @@ def __run_sim(env: simpy.Environment, conf: SimulationConfiguration):
 
 
 def simulate(conf: SimulationConfiguration):
-    global simulated_lttc
+    global simulated_lttc, test_pass_results
 
     env = simpy.Environment()
     env.process(__run_sim(env, conf))
     env.run(until=DAY_DURATION * SIM_DAYS)
 
-    return statistics.mean(simulated_lttc), math.ceil(len(simulated_lttc) / SIM_DAYS)
+    test_pass_rate = (sum(test_pass_results) / len(test_pass_results)) * 100
+    return statistics.mean(simulated_lttc), math.ceil(len(simulated_lttc) / SIM_DAYS), test_pass_rate
+
+
 
 if __name__ == "__main__":
     dist = Distribution([6,6,7,7,7,7,7,8,8,9], 1)

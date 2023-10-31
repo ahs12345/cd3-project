@@ -55,7 +55,8 @@ def app():
             simulation_results.configure(
                 text=f"Simulation Results:\n" +
                      f"Lead Time to Changes: {math.floor(param[1])}\n" +
-                     f"Deployment Frequency: {param[2]}" 
+                     f"Deployment Frequency: {param[2]}\n" +
+                     f"Test Pass Rate: {param[3]:.2f}%"
             )
             print(param)
 
